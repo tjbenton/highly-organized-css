@@ -1,0 +1,582 @@
+<!-- @todo:
+  - get feature/clientOffersList (new and old) pulled up to look at
+-->
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Writing Highly-Organized CSS</title>
+
+		<meta name="description" content="Some tips and tricks for organizing and optimizing your css">
+		<meta name="author" content="Tyler Benton, Jessica Kennedy">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Writing Highly-Organized CSS</h1>
+					<p>
+						<small>With Jessica Kennedy</small>
+					</p>
+					<p>Adapted with love from Tyler Benton's Excellent Documentation: bit.ly/1oqh2aw</p>
+				</section>
+
+
+				<section>
+					<h1>Preprocessors</h1>
+				</section>
+
+				<section>
+					<h3>Less is cool and all but...</h3>
+					<p>We need more power!</p>
+				</section>
+
+				<section>
+					<h3>Sass/Stylus vs Less:</h3>
+					<ul>
+						<li class="fragment">An actual language (if/else, for/while/each looping etc)</li>
+						<li class="fragment">Write custom functions</li>
+						<li class="fragment">@extends</li>
+            <li class="fragment">Hash support</li>
+					</ul>
+				</section>
+
+        <section>
+          <h3>Stylus vs Sass</h3>
+          <ul>
+            <li class="fragment">Cleaner syntax</li>
+            <li class="fragment">Handles hashes better</li>
+            <li class="fragment">Property lookups</li>
+            <li class="fragment">File Globbing</li>
+            <li class="fragment">Built on Node.js</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Examples</h1>
+          <p><a href="http://codepen.io/collection/nqBKdd/" target="_blank">codepen.io/collection/nqBKdd/</a></p>
+        </section>
+
+				<section>
+					<h3>Problems With Traditional CSS development</h3>
+					<ul>
+						<li>Specificity issues</li>
+						<li>Difficult to locate styles</li>
+						<li>Poor Context (What will break if this is modified?)</li>
+						<li>Difficult to maintain consistency</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Good News!</h3>
+					<h1>It's Fixable!</h1>
+					<h3>But How?</h3>
+				</section>
+
+				<section>
+					<h1>Methodologies:</h1>
+					<ul>
+						<li>IT CSS</li>
+						<li>SMACSS</li>
+						<li>BEM</li>
+						<li>Namespacing</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>IT CSS</h1>
+					<p>"Inverted Triangle" CSS</p>
+					<p>Solves the problem of specificity.</p>
+				</section>
+
+				<section>
+					<h3>Quick Primer on CSS Specificity</h3>
+					<p><code>#ID > .class > element (p)</code></p>
+				</section>
+
+				<section>
+					<h3>Specificity chart</h3>
+					<p><code>figure#mullet .is-awesome</code></p>
+					<table>
+						<tr>
+							<th>#id</th>
+							<th>.class</th>
+							<th>element (p)</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h3>More-specific</h3>
+					<p><code>figure#mullet.has-beard .is-awesome</code></p>
+					<table>
+						<tr>
+							<th>#id</th>
+							<th>.class</th>
+							<th>element (p)</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>1</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h3>Less-specific</h3>
+					<p><code>figure.has-shades.has-beard .is-awesome</code></p>
+					<table>
+						<tr>
+							<th>#id</th>
+							<th>.class</th>
+							<th>element (p)</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>3</td>
+							<td>1</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>Now, back to IT CSS</h2>
+				</section>
+
+				<section>
+					<h2>Inverted Triangle CSS<h2>
+					<img src="images/it-css.png" alt="IT CSS">
+					<small>From CSSWizardry (Harry Roberts) @itcss</small>
+				</section>
+
+				<section>
+					<img src="images/normal-specificity.png" alt="Normal Specificity">
+					<p>Normal CSS Specificity</p>
+					<small>From @csswizardry (Harry Roberts)</small>
+				</section>
+
+				<section>
+					<img src="images/it-specificity.png" alt="Normal Specificity">
+					<p>IT CSS Specificity</p>
+					<small>From @csswizardry (Harry Roberts)</small>
+				</section>
+
+				<section>
+					<h3>How to structure CSS:</h3>
+					<ul>
+						<li>Elements & Vertical-Rhythm selectors</li>
+						<li>General Classes</li>
+						<li>Specific style overrides</li>
+						<li>Media Query Overrides</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>That's great!</h2>
+					<h3>But how do we <b>actually</b> accomplish this?</h3>
+				</section>
+
+				<!-- Folder Structure section -->
+        <section>
+          <h1>SMACSS</h1>
+          <p>Scalable & Modular Architecture for CSS</p>
+          <p>SMACSS.com</p>
+					<p>Solves the problem of difficulty locating styles</p>
+        </section>
+
+        <section>
+          <h3>Goals of SMACSS</h3>
+          <ul>
+            <li>Locate & organize styeles quickly</li>
+            <li>Supports ITCSS</li>
+            <li>Context for styles</li>
+          </ul>
+        </section>
+
+				<section>
+					<h1>Folder Structure</h1>
+					<p>Organized site-level css</p>
+					<p>Solves the problem of difficulty locating styles</p>
+				</section>
+
+				<section>
+					<h3>Base Structure</h3>
+					<ul>
+					  <li><code>helpers/</code></li>
+						<li><code>base/</code></li>
+						<li><code>components/</code></li>
+						<li><code>utilities/</code></li>
+						<li><code>scoped/</code></li>
+					</ul>
+          <p><small>Similar to SitePoint's Recommended Structure</small></p>
+				</section>
+
+				<section>
+					<h3>helpers/</h3>
+					<p>Where preprocessor code lives.</p>
+					<p>3 Primary sub-folders:</p>
+					<ul>
+						<li><code>variables/</code></li>
+						<li><code>functions/</code></li>
+						<li><code>mixins/</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example Helpers File Structure</h3>
+					<pre><code>
+helpers/
+	all.scss
+	variables.scss // site-level variables
+	mixins/
+		all.scss
+		some-custom-mixin.scss
+	functions/
+		all.scss
+		color.scss
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>base/</h3>
+					<p>Where element-level css resides.</p>
+					<p>Like <code>reset.css</code></p>
+				</section>
+
+				<section>
+					<h3>Example Base File Structure</h3>
+					<pre><code>
+base/
+	all.scss // includes all files in directory
+	reset.scss
+	general.scss
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>components/</h3>
+					<p>Where each component lives.</p>
+					<p>ie: <code>.table</code> or <code>.card</code></p>
+				</section>
+
+				<section>
+					<h3>Example Component File Structure</h3>
+					<pre><code>
+components/
+	all.scss // includes all files in directory
+	table.scss
+	card.scss
+	heading.scss
+	button.scss
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>utilities/</h3>
+					<p>Where util-level css lives.</p>
+					<p>ie: <code>pull-left</code> or <code>clearfix</code></p>
+				</section>
+
+				<section>
+					<h3>Example Utilities File Structure</h3>
+					<pre><code>
+utilities/
+	all.scss // includes all files in directory
+	reset.scss
+	pull.scss
+	clearfix.scss
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>scoped/</h3>
+					<p>Where section-specific site-level css lives.</p>
+					<p>ie: <code>header</code> or <code>sidebar</code></p>
+				</section>
+
+				<section>
+					<h3>Example Scoped File Structure</h3>
+					<pre><code>
+scoped/
+	all.scss // includes all files in directory
+	header.scss
+	footer.scss
+	sidebar.scss
+					</code></pre>
+				</section>
+
+				<section>
+					Now the main stlyesheet looks like this:
+					<pre><code>
+@import "base/all",
+        "helpers/all",
+        "components/all",
+        "utilities/all",
+        "scoped/all";
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Media Queries</h2>
+					<p>Use post-css <code>mqpacker</code> to combine at bottom.</p>
+				</section>
+
+				<!-- BEM --->
+				<section>
+					<h1>BEM</h1>
+					<h3>Block | Element | Modifier</h3>
+					<p>Solves the problems of Specificity, Context, &amp; Consistency</p>
+				</section>
+
+				<!-- @todo: gotta actually put some real info in here for preso in june --->
+				<section>
+					<h3>What are BEM's Benefits?</h3>
+          <ul>
+            <li>Avoids Nesting (single-level specificity)</li>
+            <li>Clear picture of what CSS & HTML are doing</li>
+            <li>Clearly deliniates components</li>
+            <li>Scales marvelously</li>
+          </ul>
+				</section>
+
+				<!-- Namespacing -->
+				<section>
+					<h1>Namespacing</h1>
+					<p>Giving styles programmatic context.</p>
+					<p>Solves the problems of Context</p>
+				</section>
+
+				<section>
+					<h3>Scenario:</h3>
+					<p>This style is being naughty:</p>
+					<p><code>.table-row__header</code></p>
+          <p>What could happen if I change this style?</p>
+				</section>
+
+				<section>
+					<h2><code>c-</code> Component</h2>
+					<p>A Concrete, standalone, implementation specific piece of UI.</p>
+					<p>ie: <b>c-card</b> or <b>c-button</b></p>
+				</section>
+
+				<section>
+					<h2><code>o-</code> Object</h2>
+					<p>Abstract box-model only piece of UI. (Similar to component, but more reusable)</p>
+					<p>ie: <b>o-wrapper</b> or <b>o-actions</b></p>
+				</section>
+
+				<section>
+					<h2><code>u-</code> Utility</h2>
+					<p>A class with a single, specific, trustworthy role.</p>
+					<p>ie: <b>u-pull-left</b> or <b>u-hide</b></p>
+				</section>
+
+				<section>
+					<h2><code>_-</code> Hack</h2>
+					<p>When the worst happens.</p>
+					<p>ie: <b>_-ie9-just-cant-focus</b> or <b>_-die-ie-die</b></p>
+				</section>
+
+				<section>
+					<h3>Namespaces can also delineate modifications</h3>
+          <p>(SMACSS Guideline)</p>
+				</section>
+
+				<section>
+					<h2><code>is-</code> <code>has-</code> Modifier</h2>
+					<p>A temporary, optional or short-lived style</p>
+					<p>ie: <b>is-awesome</b> or <b>has-mullet</b></p>
+				</section>
+
+				<section>
+					<h2><code>t-</code> Theme</h2>
+					<p>Anything within could have a different theme applied.</p>
+					<p>ie: <b>t-coca-cola</b> or <b>t-inmar-blue</b></p>
+				</section>
+
+				<section>
+					<h2><code>s-</code> Scoped</h2>
+					<p>Specifically scoped to a single section or page.</p>
+					<p>ie: <b>s-coupon-table</b> or <b>s-purchase-requirements</b></p>
+				</section>
+
+				<section>
+					<h1>Bring it together</h1>
+					<p>Now, our css & html read like a story.</p>
+					<p>Let's see it in action!</p>
+				</section>
+
+				<section>
+					<p>Namespaced &amp; BEM</p>
+					<pre><code>
+&lthtml class="t-light has-overlay"&gt
+  ...
+  &ltarticle class="c-modal c-modal--wide is-open"&gt
+    &ltheader class="c-modal__header o-headline"&gt
+      ...
+    &lt/header&gt
+    &ltdiv class="c-modal__content"&gt
+      ...
+    &lt/div&gt
+    &ltfooter class="c-modal__footer o-actions"&gt
+      &ltbutton href="c-btn c-btn--tertiary o-actions__item"&gtCancel&lt/button&gt
+      &ltbutton href="c-btn c-btn--secondary o-actions__item"&gtConfirm&lt/button&gt
+    &lt/footer&gt
+  &lt/article&gt
+  ...
+  &ltfooter class="s-footer"&gt
+    &ltsection class="c-social o-grid o-grid--four-columns"&gt
+      &lta href="..."&gtFacebook&lt/a&gt
+      &lta href="..."&gtTwitter&lt/a&gt
+      &lta href="..."&gtGoogle Plus&lt/a&gt
+      &lta href="..."&gtInstagram&lt/a&gt
+    &lt/section&gt
+    &ltsmall class="c-copyright _c-copyright u-text-center"&gt...&lt/small&gt
+  &lt/footer&gt
+  ...
+&lt/html&gt
+					</code></pre>
+				</section>
+
+				<section>
+					<p>vs Bootstrap &amp; Custom Styles</p>
+					<pre><code>
+&lt;html&gt;
+  ...
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          ...
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <section class="social container-fluid">
+      <div class="row">
+        <a href="..." class="col-3">Facebook</a>
+        <a href="..." class="col-3">Twitter</a>
+        <a href="..." class="col-3">Google Plus</a>
+        <a href="..." class="col-3">Instagram</a>
+      </div>
+    </section>
+    <small class="copyright text-center">...</small>
+  </footer>
+  ...
+&lt;/html&gt;
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>More Benefits to namespacing</h3>
+					<ul>
+						<li>Find all the hacks, fast!</li>
+						<li><b>See</b> all the utils, hacks, etc on a given page fast</li>
+					</ul>
+					<pre><code>
+[class^="u-"],
+[class*=" u-"]{
+  outline: 5px solid cyan !important; // all the utils classes!
+}
+					</code></pre>
+				</section>
+
+        <section>
+          <h1>Example</h1>
+          <p>Let's look at feature/clientOffersList</p>
+        </section>
+
+        <section>
+          <h3>Recommendation</h3>
+          <ul>
+            <li>Switch to Stylus</li>
+            <li>Implement a folder structure</li>
+            <li>Create simple variables</li>
+            <li>Use a color function</li>
+          </ul>
+        </section>
+
+				<section>
+					<h1>Questions?</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
