@@ -1,0 +1,157 @@
+include 01_inro
+include 02_preprocessors
+include 03_current-state-of-css
+include 04_methodologies
+include 05_itcss
+include 06_smacss
+include 07_structure
+
+
+// BEM -
+
+section
+  h1 BEM
+  h3 Block | Element | Modifier
+  p Solves the problems of Specificity, Context, & Consistency
+// @todo: gotta actually put some real info in here for preso in june -
+
+section
+  h3 What are BEM's Benefits?
+  ul
+    li Avoids Nesting (single-level specificity)
+    li Clear picture of what CSS & HTML are doing
+    li Clearly deliniates components
+    li Scales marvelously
+// Namespacing
+
+section
+  h1 Namespacing
+  p Giving styles programmatic context.
+  p Solves the problems of Context
+
+section
+  h3 Scenario:
+  p This style is being naughty:
+  p
+    code .table-row__header
+  p What could happen if I change this style?
+
+section
+  h2
+    code c-
+    |  Component
+  p A Concrete, standalone, implementation specific piece of UI.
+  p
+    | ie:
+    b c-card
+    |  or
+    b c-button
+
+section
+  h2
+    code o-
+    |  Object
+  p Abstract box-model only piece of UI. (Similar to component, but more reusable)
+  p
+    | ie:
+    b o-wrapper
+    |  or
+    b o-actions
+
+section
+  h2
+    code u-
+    |  Utility
+  p A class with a single, specific, trustworthy role.
+  p
+    | ie:
+    b u-pull-left
+    |  or
+    b u-hide
+
+section
+  h2
+    code _-
+    |  Hack
+  p When the worst happens.
+  p
+    | ie:
+    b _-ie9-just-cant-focus
+    |  or
+    b _-die-ie-die
+
+section
+  h3 Namespaces can also delineate modifications
+  p (SMACSS Guideline)
+
+section
+  h2
+    code is-
+    code has-
+    |  Modifier
+  p A temporary, optional or short-lived style
+  p
+    | ie:
+    b is-awesome
+    |  or
+    b has-mullet
+
+section
+  h2
+    code t-
+    |  Theme
+  p Anything within could have a different theme applied.
+  p
+    | ie:
+    b t-panda-express
+    |  or
+    b t-zaxbys
+
+section
+  h2
+    code s-
+    |  Scoped
+  p Specifically scoped to a single 
+  section or page.
+  p
+    | ie:
+    b s-coupon-table
+    |  or
+    b s-purchase-requirements
+
+section
+  h1 Bring it together
+  p Now, our css & html read like a story.
+  p Let's see it in action!
+
+section
+  p Namespaced & BEM
+  pre.
+
+section
+  p vs Bootstrap & Custom Styles
+  pre.
+
+section
+  h3 More Benefits to namespacing
+  ul
+    li Find all the hacks, fast!
+    li
+      b See
+      |  all the utils, hacks, etc on a given page fast
+  pre.
+
+section
+  h1 Example
+  p Let's look at feature/clientOffersList
+
+section
+  h3 Recommendation
+  ul
+    li Switch to Stylus
+    li Implement a folder structure
+    li Create simple variables
+    li Use a color function
+
+section
+  h1 Questions?

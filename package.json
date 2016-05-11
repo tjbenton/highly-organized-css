@@ -1,0 +1,30 @@
+{
+  "name": "highly-organized-css",
+  "version": "1.0.0",
+  "description": "How to write highly organized css",
+  "main": "flyfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/highly-organized-css.git"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjbenton/highly-organized-css/issues"
+  },
+  "homepage": "https://github.com/tjbenton/highly-organized-css#readme",
+  "devDependencies": {
+    "fly": "^1.2.4",
+    "fly-esnext": "^1.0.1",
+    "fly-jade": "github:tjbenton/fly-jade",
+    "fly-stylus": "^0.5.0",
+    "jstransformer-marked": "^1.0.1",
+    "livereload": "^0.4.1"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

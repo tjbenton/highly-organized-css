@@ -5,19 +5,19 @@ Methodology is a system of methods used in a particular area of study or activit
 Since this is a responsive framework we are using the **mobile first approach**, along with **Atomic NSOOBEMITSCSS**. No I mean it-- we use **Atomic NSOOBEMITSCSS** (aka several methodologies combined into one awesome name).
 
 ## Mobile first approach
-This is a fairly well known methodology where mobile size version of the page is the base starting point, hence the name *Mobile fisrt*. This methodology forces the developer to figure out what information is most important to the user, eliminating extra fluff. Then, as the viewport gets larger, the developer can start displaying more and more information-- and in most cases adjusting the layout of the page. There aren't any hard fast rules here. A lot of it is *common sense* and your best judgement.
+This is a fairly well known methodology where mobile size version of the page is the base starting point, hence the name *Mobile first*. This methodology forces the developer to figure out what information is most important to the user, eliminating extra fluff. Then, as the viewport gets larger, the developer can start displaying more and more information-- and in most cases adjusting the layout of the page. There aren't any hard fast rules here. A lot of it is *common sense* and your best judgement.
 
-After you know what you want the page to do on a small screen and you have a pretty good idea on how you want it to respond as it gets larger, you can now start coding. When you start writing your `scss`, your base styles should reflect what you want it to look like on the smallest viewport you support(most likely `320px`). Other than a few edge cases this is the best approach to take. `99.99%` of the time, the smallest viewport is going to have the simplest layout, and the layout becomes more complex the larger the viewport gets because you're adjusting the layout of the page. Starting with the smallest viewport first eliminates the need to overwrite the extra styles applied to larger viewports. It could theoretically also allow us to send smaller files to mobile devices if we broke out our media queries into their own files, which can increase page load speed for all mobile devices, especially devices connected through painfully slow *Edge* or *3G*. Heaver page loads are then left for the desktops, which are reliably capable of handling exra page weight.
+After you know what you want the page to do on a small screen and you have a pretty good idea on how you want it to respond as it gets larger, you can now start coding. When you start writing your `scss`, your base styles should reflect what you want it to look like on the smallest viewport you support(most likely `320px`). Other than a few edge cases this is the best approach to take. `99.99%` of the time, the smallest viewport is going to have the simplest layout, and the layout becomes more complex the larger the viewport gets because you're adjusting the layout of the page. Starting with the smallest viewport first eliminates the need to overwrite the extra styles applied to larger viewports. It could theoretically also allow us to send smaller files to mobile devices if we broke out our media queries into their own files, which can increase page load speed for all mobile devices, especially devices connected through painfully slow *Edge* or *3G*. Heaver page loads are then left for the desktops, which are reliably capable of handling extra page weight.
 
 **Example:**
 You have 4 elements in a container that you want to span 4 across on a large viewport with the centered text, 2 across on a medium viewport with centered text, and stack to be 1 column on a small viewport with the text aligned to the left.
 
 ```html
 <div class="c-foo u-clear">
- <div class="c-foo__bar">Item 1</div>
- <div class="c-foo__bar">Item 2</div>
- <div class="c-foo__bar">Item 3</div>
- <div class="c-foo__bar">Item 4</div>
+  <div class="c-foo__bar">Item 1</div>
+  <div class="c-foo__bar">Item 2</div>
+  <div class="c-foo__bar">Item 3</div>
+  <div class="c-foo__bar">Item 4</div>
 </div>
 ```
 
@@ -27,21 +27,21 @@ By default a `div` has a `width: auto;`, and all elements have a default `text-a
 
 ```scss
 // DON'T DO THIS
-.c-foo{
- &__bar{
-  float: left;
-  text-align: center;
-  width: 100% / 4; // 25%
+.c-foo {
+  &__bar {
+    float: left;
+    text-align: center;
+    width: (100% / 4); // 25%
 
-  @include media("<=md"){ // less than or equal to the `md` viewport
-   width: 100% / 2; // 50%
-  }
+    +media('<=md') { // less than or equal to the `md` viewport
+      width: 100% / 2; // 50%
+    }
 
-  @include media("<=sm"){ // less than or equal to the `sm` viewport
-   width: 100%;
-   text-align: left;
+    +media('<=sm') { // less than or equal to the `sm` viewport
+      width: 100%;
+      text-align: left;
+    }
   }
- }
 }
 ```
 
@@ -50,19 +50,19 @@ By default a `div` has a `width: auto;`, and all elements have a default `text-a
 Since we started with the mobile size first we don't have to define out `width: 100%` because that's what the default state of a `div` is. In this case it's only 2 styles, but they quickly start adding up, especially with more complex layouts.
 
 ```scss
-.c-foo{
- &__bar{
-  float: left;
+.c-foo {
+  &__bar {
+    float: left;
 
-  @include media(">=md"){ // greater than or equal to the `md` viewport
-   text-align: center;
-   width: 100% / 2; // 50%
-  }
+    +media('>=md') { // greater than or equal to the `md` viewport
+      text-align: center;
+      width: 100% / 2; // 50%
+    }
 
-  @include media(">=lg"){ // greater than or equal to the `lg` viewport
-   width: 100% / 4; // 25%
+    +media(">=lg") { // greater than or equal to the `lg` viewport
+      width: 100% / 4; // 25%
+    }
   }
- }
 }
 ```
 
