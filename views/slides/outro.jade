@@ -1,0 +1,103 @@
+section
+  h1 Bring it together
+  p Now, our css & html read like a story.
+  p Let's see it in action!
+
+section
+  :marked
+    ### Namespaced & BEM
+    
+    ```html
+    <html class="t-light has-overlay">
+      ...
+      <article class="c-modal c-modal--wide is-open">
+        <header class="c-modal__header o-headline">
+          ...
+        </header>
+        <div class="c-modal__content">
+          ...
+        </div>
+        <footer class="c-modal__footer o-actions">
+          <button href="c-btn c-btn--tertiary o-actions__item">Cancel</button>
+          <button href="c-btn c-btn--secondary o-actions__item">Confirm</button>
+        </footer>
+      </article>
+      ...
+      <footer class="s-footer">
+        <section class="c-social o-grid o-grid--four-columns">
+          <a href="...">Facebook</a>
+          <a href="...">Twitter</a>
+          <a href="...">Google Plus</a>
+          <a href="...">Instagram</a>
+        </section>
+        <small class="c-copyright _c-copyright u-text-center">...</small>
+      </footer>
+      ...
+    </html>
+    ```
+
+section
+  :marked
+    Structure vs Bootstrap & Custom Styles
+    ```html
+    <html>
+      ...
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              ...
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <section class="social container-fluid" style="top: 330px; display: none;">
+          <div class="row">
+            <a href="..." class="col-3">Facebook</a>
+            <a href="..." class="col-3">Twitter</a>
+            <a href="..." class="col-3">Google Plus</a>
+            <a href="..." class="col-3">Instagram</a>
+          </div>
+        </section>
+        <small class="copyright text-center">...</small>
+      </footer>
+      ...
+    </html>
+    ```
+
+section
+  :marked
+    ### More Benefits to namespacing
+      - Find all the hacks, fast!
+      - **See** all the utils, hacks, etc on a given page fast
+    ```css
+    [class^='u-'], [class*=' u-'] {
+      outline: 5px solid cyan !important; // all the utils classes!
+    }
+    ```
+
+
+section
+  :marked
+    # Example
+    Let's look at feature/clientOffersList
+
+section
+  :marked
+    ### Recommendation
+      - Switch to Stylus
+      - Implement a folder structure
+      - Create simple variables
+      - Use a color function
+
+section
+  :marked
+    # Questions?

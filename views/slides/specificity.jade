@@ -1,0 +1,73 @@
+section
+  .c-specificity
+    .c-specificity__top Specificity
+    .c-specificity__side Location in Stylesheet
+    img(class='c-specificity__img', src='lib/images/specificity-01.svg', alt='Normal Specificity')
+    
+  p Current state of most css stylesheets
+
+section
+  .c-specificity
+    .c-specificity__top Specificity
+    .c-specificity__side Location in Stylesheet
+    img(class='c-specificity__img', src='lib/images/specificity-02.svg', alt='Normal Specificity')
+  
+  p What they should look like
+
+section
+  :marked
+    ### CSS Specificity
+    
+      - `important`
+      - Inline `<style>` definitions
+      - `#id`
+      - attribute selector `[class*='awesome']`
+      - `.class`
+      - elements `p`
+    
+    for more indepth explanation see [cssspecificity.com](http://cssspecificity.com)
+
+section.is-extraneous
+  h3 Specificity chart
+  p: code figure#mullet .is-awesome
+  table
+    tr
+      th #id
+      th .class
+      th element (p)
+    tr
+      td 1
+      td 1
+      td 1
+
+section.is-extraneous
+  h3 More-specific
+  p: code figure#mullet.has-beard .is-awesome
+  table
+    tr
+      th #id
+      th .class
+      th element (p)
+    tr
+      td 1
+      td 2
+      td 1
+
+section.is-extraneous
+  h3 Less-specific
+  p: code figure.has-shades.has-beard .is-awesome
+  table
+    tr
+      th #id
+      th .class
+      th element (p)
+    tr
+      td 0
+      td 3
+      td 1
+
+section.is-extraneous
+  :marked
+    - Give up `#id`s
+    - Stop nesting selectors so deeply
+    - Use a class based architecture

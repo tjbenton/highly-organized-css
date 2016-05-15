@@ -25,6 +25,7 @@
     "livereload": "^0.4.1"
   },
   "dependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "to-js": "0.0.4"
   }
 }

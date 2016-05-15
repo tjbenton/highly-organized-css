@@ -1,84 +1,10 @@
 @require './vendor/reveal/index'
-@require './vendor/hljs/*'
-
-$colors = {
-  'darkgray': #1b2b34,
-  'teal': #009688,
-  'red': #EB606B
-}
-
-// Override theme settings (see ../template/settings.scss)
-$backgroundColor = $colors.darkgray
-
-$mainColor = #fff
-$headingColor = #fff
-
-$mainFontSize = 38px
-$mainFont = 'Source Sans Pro', Helvetica, sans-serif
-$headingFont = 'Source Sans Pro', Helvetica, sans-serif
-$headingTextShadow = none
-$headingLetterSpacing = normal
-$headingTextTransform = uppercase
-$headingFontWeight = 600
-$linkColor = $colors.teal
-// $linkColor = blue;
-$linkColorHover = lighten($linkColor, 15%)
-$selectionBackgroundColor = lighten($linkColor, 25%)
-
-$heading1Size = 2.5em
-$heading2Size = 1.6em
-$heading3Size = 1.3em
-$heading4Size = 1.0em
-
 
 .reveal
-  a
-    color: $colors.teal;
-    &:hover, &:focus
-      color: lighten($colors.teal, 20%);
-    &:active
-      color: darken($colors.teal, 20%);
+  @require './vendor/hljs/*'
 
-  button:focus
-    outline none
-
-
-  section.has-light-background
-    &, h1, h2, h3, h4, h5, h6
-      color #222
-
-  // .fragment
-  //   background white
-  code
-    font-family 'Source Code Pro' !important
-    display inline-block
-    color: $colors.red;
-    background-color: rgba(lighten($colors.red, 80%), 0.9);
-    border-radius 0.15em
-    padding 0 0.15em
-    white-space pre-wrap
-
-  table
-    border-collapse collapse
-    margin auto
-    border-spacing 0px
-
-    th, td
-      text-align center
-      padding 0.2em 0.5em
-      border-bottom 1px solid
-
-    th
-      font-weight bold
-
-    tr:last-child td
-      border-bottom: none;
-
-  small
-    display inline-block
-    font-size 0.6em
-    line-height 1.2em
-    vertical-align top
-
-
+@require '_variables'
 @require './vendor/reveal/template/_theme'
+
+.reveal
+  @require '_presentation'

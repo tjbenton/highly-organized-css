@@ -1,0 +1,28 @@
+section
+  h1 Namespacing
+  p Giving styles programmatic context.
+  p Solves the problems of Context
+  
+section
+  :marked
+    ### Scenario:
+    This style is being naughty: `.table-row__header`
+    What could happen if I change this style?
+    
+include components/namespace
+include objects/namespace
+include scopes/namespace
+include themes/namespace
+include utilities/namespace
+include states/namespace
+
+section
+  h2
+    code _-
+    |  Hack
+  p When the worst happens.
+  p
+    | ie:
+    b _-ie9-just-cant-focus
+    |  or
+    b _-die-ie-die

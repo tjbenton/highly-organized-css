@@ -1,13 +1,15 @@
 import path from 'path'
-import livereload from 'livereload';
+import livereload from 'livereload'
 import { spawn } from 'child_process'
+import to from 'to-js'
 // import simpleserver from 'http-server'
 export async function jade() {
   await this
     .source(path.join('views', 'index.jade'))
     .jade({
       base: 'views',
-      pretty: true
+      pretty: true,
+      to
     })
     .target('.', { depth: 2 })
 }

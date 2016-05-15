@@ -1,0 +1,90 @@
+section
+  :marked
+    # Structure
+    
+    Organized site-level css
+    
+    Solves the problem of difficulty locating styles
+
+
+//- already mentioned in the methodologies section but I think it's fine to repeat
+section
+  h1 Structure CSS:
+  ul
+    li Generic to explicit
+    li Low specificity to high specificity
+    li Far-reaching to localised
+
+section
+  :marked
+    ### Folder Structure
+    
+    ```bash
+    app/lib/styles/
+    ├── base/
+    ├── components/
+    ├── pages/
+    ├── scopes/
+    ├── tools/
+    ├── utilities/
+    └── index.styl
+    ```
+
+include tools
+include base
+include components
+include objects
+include utilities
+include scopes
+include pages
+include themes
+include javascript
+include states
+include dev
+
+//- section.s-larger-code(style="display: none;")
+//-   style.
+//-     .s-larger-code pre code {
+//-       max-height: 600px;
+//-     }
+//-   :marked
+//-     ```bash
+//-     app/lib/styles/
+//-     ├── base/
+//-     │   ├── ...
+//-     │   └── index.styl
+//-     ├── components/
+//-     │   ├── ...
+//-     │   └── index.styl
+//-     ├── tools/
+//-     │   ├── ...
+//-     │   └── index.styl
+//-     ├── objects/
+//-     │   ├── ...
+//-     │   └── index.styl
+//-     ├── pages/
+//-     │   └── ...
+//-     ├── scopes/
+//-     │   ├── ...
+//-     │   └── index.styl
+//-     ├── utilities/
+//-     │   ├── ...
+//-     │   └── index.styl
+//-     └── index.styl
+//-     ```
+
+//- section
+//-   :marked
+//-     # **/index.styl
+//-     
+//-     ```stylus
+//-     @require '_*'
+//-     ```
+//-     
+//-     or
+//-     
+//-     ```stylus
+//-     @require '_file-1'
+//-     @require '_file-2'
+//-     ..etc
+//-     ```

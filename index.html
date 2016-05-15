@@ -25,60 +25,6 @@
           </ul>
         </section>
         <section>
-          <h1>Preprocessors</h1>
-          <ul>
-            <li>Less</li>
-            <li>Sass</li>
-            <li>Stylus</li>
-            <li>PostCSS</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Less is cool and all but...</h3>
-          <p>We need more power!</p>
-        </section>
-        <section>
-          <h3>Sass/Stylus vs Less:</h3>
-          <ul>
-            <li class="fragment">An actual language (<code>if</code>/<code>else</code>, <code>for</code>/<code>while</code>/<code>each</code> looping etc)</li>
-            <li class="fragment">Write custom functions</li>
-            <li class="fragment"><code>@extends</code></li>
-            <li class="fragment">Hash support</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Stylus vs Sass</h3>
-          <ul>
-            <li class="fragment">Cleaner syntax</li>
-            <li class="fragment">Handles hashes better</li>
-            <li class="fragment">Property lookups</li>
-            <li class="fragment">File Globbing</li>
-            <li class="fragment">Built on Node.js</li>
-          </ul>
-        </section>
-        <section>
-          <p>@todo come back and update this with a new pen</p>
-            <p data-height="500" data-theme-id="0" data-slug-hash="GZyaLJ" data-default-tab="css,result" data-user="mistersender" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/NaN/pen/GZyaLJ/">Sample Website Theme using color functions</a> by Jessica Kennedy (<a href="http://codepen.io/mistersender">@mistersender</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-        </section>
-        <section>
-          <p>@todo come back and update this with a new pen</p>
-            <p data-height="500" data-theme-id="0" data-slug-hash="ZWvPvV" data-default-tab="css,result" data-user="mistersender" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/NaN/pen/ZWvPvV/">Sample Website Theme using color functions</a> by Jessica Kennedy (<a href="http://codepen.io/mistersender">@mistersender</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-        </section>
-        <section>
-          <h3>Problems With Traditional CSS development</h3>
-          <ul>
-            <li>Specificity issues</li>
-            <li>Difficult to locate styles</li>
-            <li>Poor Context (What will break if this is modified?)</li>
-            <li>Difficult to maintain consistency</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Good News!</h3>
-          <h1>It's Fixable!</h1>
-          <h3>But How?</h3>
-        </section>
-        <section>
           <h1>Methodologies:</h1>
           <ul>
             <!-- - https://speakerdeck.com/dafed/managing-css-projects-with-itcss-->
@@ -88,13 +34,41 @@
             <li class="fragment"><a href="https://github.com/tjbenton/highly-organized-css/blob/master/NAMESPACES.md">Namespacing</a></li>
           </ul>
         </section>
-        <section><h1 id="it-css">IT CSS</h1>
-<p>&quot;Inverted Triangle&quot; CSS
-Solves the problem of specificity.</p>
-
+        <section>
+          <h1>Structure CSS:</h1>
+          <ul>
+            <li>Generic to explicit</li>
+            <li>Low specificity to high specificity</li>
+            <li>Far-reaching to localised</li>
+          </ul>
         </section>
-        <section><p>@TODO look into <a href="http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528">this</a> </p>
-
+        <section>
+          <h2>What's wrong with traditional CSS development?</h2>
+          <ol>
+            <li class="fragment">Specificity issues</li>
+            <li class="fragment">Difficult to locate styles</li>
+            <li class="fragment">Poor Context (What will break if this is modified?)</li>
+            <li class="fragment">Difficult to maintain consistency</li>
+          </ol>
+        </section>
+        <section>
+          <h3>Good News!</h3>
+          <h1>It's Fixable!</h1>
+          <h3>But How?</h3>
+        </section>
+        <section>
+          <div class="c-specificity">
+            <div class="c-specificity__top">Specificity</div>
+            <div class="c-specificity__side">Location in Stylesheet</div><img src="lib/images/specificity-01.svg" alt="Normal Specificity" class="c-specificity__img">
+          </div>
+          <p>Current state of most css stylesheets</p>
+        </section>
+        <section>
+          <div class="c-specificity">
+            <div class="c-specificity__top">Specificity</div>
+            <div class="c-specificity__side">Location in Stylesheet</div><img src="lib/images/specificity-02.svg" alt="Normal Specificity" class="c-specificity__img">
+          </div>
+          <p>What they should look like</p>
         </section>
         <section><h3 id="css-specificity">CSS Specificity</h3>
 <ul>
@@ -105,10 +79,10 @@ Solves the problem of specificity.</p>
 <li><code>.class</code></li>
 <li>elements <code>p</code></li>
 </ul>
-<p>for more indepth explanation see cssspecificity.com</p>
+<p>for more indepth explanation see <a href="http://cssspecificity.com">cssspecificity.com</a></p>
 
         </section>
-        <section>
+        <section class="is-extraneous">
           <h3>Specificity chart</h3>
           <p><code>figure#mullet .is-awesome</code></p>
           <table>
@@ -124,7 +98,7 @@ Solves the problem of specificity.</p>
             </tr>
           </table>
         </section>
-        <section>
+        <section class="is-extraneous">
           <h3>More-specific</h3>
           <p><code>figure#mullet.has-beard .is-awesome</code></p>
           <table>
@@ -140,7 +114,7 @@ Solves the problem of specificity.</p>
             </tr>
           </table>
         </section>
-        <section>
+        <section class="is-extraneous">
           <h3>Less-specific</h3>
           <p><code>figure.has-shades.has-beard .is-awesome</code></p>
           <table>
@@ -156,150 +130,377 @@ Solves the problem of specificity.</p>
             </tr>
           </table>
         </section>
-        <section>
-          <h2>Now, back to IT CSS</h2>
-        </section>
-        <section>
-          <h2>Inverted Triangle CSS</h2>
-          <div><img src="lib/images/it-css.png" alt="IT CSS"></div><small>From <a href='csswizardry.com'>CSSWizardry</a> (Harry Roberts) <a href="https://twitter.com/itcss_io">@itcss_io</a></small>
-        </section>
-        <section><img src="lib/images/normal-specificity.png" alt="Normal Specificity">
-          <p>Normal CSS Specificity</p><small>From <a href='https://twitter.com/csswizardry'>@csswizardry</a> (Harry Roberts)</small>
-        </section>
-        <section><img src="lib/images/it-specificity.png" alt="Normal Specificity">
-          <p>IT CSS Specificity</p><small>From <a href='https://twitter.com/csswizardry'>@csswizardry</a> (Harry Roberts)</small>
-        </section>
-        <section>
-          <h3>How to structure CSS:</h3>
-          <ul>
-            <li>Elements & Vertical-Rhythm selectors</li>
-            <li>General Classes</li>
-            <li>Specific style overrides</li>
-            <li>Media Query Overrides</li>
-          </ul>
-        </section>
-        <section>
-          <h2>That's great!</h2>
-          <h3>But how do we<b>actually</b> accomplish this?</h3>
-        </section>
-        <section><h1 id="smacss-pronounced-smacks-">SMACSS (pronounced &quot;smacks&quot;)</h1>
-<p>Scalable &amp; Modular Architecture for CSS
-<a href="https://smacss.com/">SMACSS.com</a>
-Solves the problem of difficulty locating styles</p>
-
-        </section>
-        <section><h3 id="goals-of-smacss">Goals of SMACSS</h3>
-<ul>
-<li>Locate &amp; organize styles quickly</li>
-<li>Supports ITCSS</li>
-<li>Context for styles</li>
+        <section class="is-extraneous"><ul>
+<li>Give up <code>#id</code>s</li>
+<li>Stop nesting selectors so deeply</li>
+<li>Use a class based architecture</li>
 </ul>
 
         </section>
-        <!-- BEM --->
-        <section>
-          <h1>BEM</h1>
-          <h3>Block | Element | Modifier</h3>
-          <p>Solves the problems of Specificity, Context, & Consistency</p>
+        <section><h1 id="bem">BEM</h1>
+<h3 id="block-element-modifier">Block | Element | Modifier</h3>
+<p>Solves the problems of Specificity, Context, &amp; Consistency</p>
+<pre><code class="lang-scss">.block {}
+.block__element {}
+.block__element--modifier {}
+</code></pre>
+
         </section>
-        <!-- @todo: gotta actually put some real info in here for preso in june --->
+        <section><h3 id="what-are-bem-s-benefits-">What are BEM&#39;s Benefits?</h3>
+<ul>
+<li>Avoids Nesting (single-level specificity)</li>
+<li>Clear picture of what CSS &amp; HTML are doing</li>
+<li>Clearly deliniates components</li>
+<li>Scales marvelously</li>
+</ul>
+
+        </section>
+        <section><h3 id="what-are-it-s-drawbacks">What are it&#39;s drawbacks</h3>
+<ul>
+<li>Longer classes</li>
+</ul>
+
+        </section>
+        <section class="is-extraneous"><h3 id="two-schools-of-thought-on-approaching-nested-classes">Two Schools of Thought on approaching nested classes</h3>
+
+        </section>
+        <section class="is-extraneous"><h3 id="both-agree-not-to-do-this">Both agree not to do this</h3>
+<p>This is terribly verbose and also forces a DOM structure upon us; it is very inflexible</p>
+<pre><code class="lang-scss">.list
+  .list__header
+  .list__items
+    .list__items__item
+      .list__items__item__title
+      .list__items__item__content
+      .list__items__item__actions
+  .list__footer
+</code></pre>
+
+        </section>
+        <section class="is-extraneous"><h3 id="1-flattening-everything-to-be-on-the-same-level">1. Flattening everything to be on the same level</h3>
+<pre><code class="lang-scss">.list
+  .list__header
+  .list__items
+    .list__item
+      .list__title
+      .list__content
+      .list__actions
+  .list__footer
+</code></pre>
+
+        </section>
+        <section class="is-extraneous"><h3 id="2-separate-those-elements">2. Separate those elements</h3>
+<pre><code class="lang-scss">.list
+  .list__header
+  .list__items
+      .list-item
+        .list-item__header
+        .list-item__body
+  .list__footer
+</code></pre>
+
+        </section>
+        <section class="is-extraneous"><p>A way to avoid this problem is to not Block your scope too high up.</p>
+
+        </section>
+        <section class="is-extraneous"><pre><code class="lang-scss">.room
+  .room__floor
+  .room__desk
+    .room__laptop
+</code></pre>
+<p>vs</p>
+<pre><code class="lang-scss">.room
+  .room__floor
+
+.desk
+
+.laptop
+</code></pre>
+
+        </section>
+        <section><h1 id="preprocessors">Preprocessors</h1>
+<ul>
+<li>Less</li>
+<li>Sass</li>
+<li>Stylus</li>
+<li>PostCSS</li>
+</ul>
+<p>For indepth info <a href="csspre.com/compare">csspre.com/compare</a></p>
+
+        </section>
         <section>
-          <h3>What are BEM's Benefits?</h3>
+          <h3>Stylus</h3>
+          <p><b>Example:</b> codepen.io/tjbenton21/pen/vGwRyQ</p>
           <ul>
-            <li>Avoids Nesting (single-level specificity)</li>
-            <li>Clear picture of what CSS & HTML are doing</li>
-            <li>Clearly deliniates components</li>
-            <li>Scales marvelously</li>
+            <li>Supports dot notation</li>
+            <li>callback functions</li>
+            <li>Existing Property lookups</li>
+            <li>Transparent mixins</li>
+            <li>Glob support (<code>@import '_*'</code>)</li>
           </ul>
         </section>
-        <!-- Namespacing-->
-        <section>
-          <h1>Namespacing</h1>
-          <p>Giving styles programmatic context.</p>
-          <p>Solves the problems of Context</p>
+        <section><h1 id="structure">Structure</h1>
+<p>Organized site-level css</p>
+<p>Solves the problem of difficulty locating styles</p>
+
         </section>
         <section>
-          <h3>Scenario:</h3>
-          <p>This style is being naughty:</p>
-          <p><code>.table-row__header</code></p>
-          <p>What could happen if I change this style?</p>
+          <h1>Structure CSS:</h1>
+          <ul>
+            <li>Generic to explicit</li>
+            <li>Low specificity to high specificity</li>
+            <li>Far-reaching to localised</li>
+          </ul>
         </section>
-        <section>
-          <h2><code>c-</code> Component</h2>
-          <p>A Concrete, standalone, implementation specific piece of UI.</p>
-          <p>ie:<b>c-card</b> or<b>c-button</b></p>
+        <section><h3 id="folder-structure">Folder Structure</h3>
+<pre><code class="lang-bash">app/lib/styles/
+├── base/
+├── components/
+├── pages/
+├── scopes/
+├── tools/
+├── utilities/
+└── index.styl
+</code></pre>
+
         </section>
-        <section>
-          <h2><code>o-</code> Object</h2>
-          <p>Abstract box-model only piece of UI. (Similar to component, but more reusable)</p>
-          <p>ie:<b>o-wrapper</b> or<b>o-actions</b></p>
+        <section><h3 id="tools">Tools</h3>
+<pre><code class="lang-html">app/lib/styles/tools
+├── functions/
+|   ├── ...
+│   └── index.styl
+├── mixins/
+|   ├── ...
+│   └── index.styl
+├── variables/
+|   ├── ...
+│   └── index.styl
+└── index.styl
+</code></pre>
+
+        </section>
+        <section><h1 id="base">base</h1>
+<pre><code class="lang-bash">app/lib/styles/base
+├── defaults.styl // global defaults(box-sizing reset etc)
+├── elements.styl
+├── ...
+└── index.styl
+</code></pre>
+
+          <ul>
+            <li class="fragment">Reset stylesheets(normalize.css)</li>
+            <li class="fragment">Global defaults(`box-sizing` and anything that affects everything)</li>
+            <li class="fragment">Element defaults(`ul`, `ol`, etc.)</li>
+            <li class="fragment">Typography (`h1-h6`, `p`, etc.)</li>
+          </ul>
+        </section>
+        <section><h3 id="components">components</h3>
+<p>@todo replace with description from docs</p>
+<pre><code class="lang-bash">app/lib/styles/components
+├── _alerts.styl
+├── _badges.styl
+├── _buttons.styl
+├── _cards.styl
+└── index.styl
+</code></pre>
+
+        </section>
+        <section><h2 id="-c-component"><code>c-</code> Component</h2>
+<p>A Concrete, standalone, implementation specific piece of UI.
+ie: c-card c-button</p>
+
+        </section>
+        <section><h3 id="objects">objects</h3>
+<p>@todo replace with description from docs</p>
+<pre><code class="lang-bash">app/lib/styles/objects
+├── _grid.styl
+├── _spacing.styl
+├── _wrapper.styl
+└── index.styl
+</code></pre>
+
+        </section>
+        <section><h2 id="-o-object"><code>o-</code> Object</h2>
+<p>Abstract box-model only piece of UI. (Similar to component, but more reusable)
+ie: <code>.o-wrapper</code> or <code>.o-actions</code></p>
+
+        </section>
+        <section><h3 id="utilities">utilities</h3>
+<p>@todo replace with description from docs</p>
+<pre><code class="lang-bash">app/lib/styles/utilities
+├── _animations.styl
+├── _clear.styl
+├── _icons.styl
+├── _reset.styl
+└── index.styl
+</code></pre>
+
         </section>
         <section>
           <h2><code>u-</code> Utility</h2>
           <p>A class with a single, specific, trustworthy role.</p>
           <p>ie:<b>u-pull-left</b> or<b>u-hide</b></p>
         </section>
-        <section>
-          <h2><code>_-</code> Hack</h2>
-          <p>When the worst happens.</p>
-          <p>ie:<b>_-ie9-just-cant-focus</b> or<b>_-die-ie-die</b></p>
+        <section><h3 id="scoped">scoped</h3>
+<p>Where section-specific site-level css lives.</p>
+<p>@todo replace with description from docs</p>
+<pre><code class="lang-bash">app/lib/styles/scopes
+├── _content.styl
+├── _footer.styl
+├── _google-places.styl # Any scoped overrides for 3rd party vendors
+├── _header.styl
+└── index.styl
+</code></pre>
+
+        </section>
+        <section><h2 id="-s-scoped"><code>s-</code> Scoped</h2>
+<p>Specifically scoped to a single section or page.</p>
+<p>ie: <strong>s-coupon-table</strong> or <strong>s-purchase-requirements</strong></p>
+
         </section>
         <section>
-          <h3>Namespaces can also delineate modifications</h3>
-          <p>(SMACSS Guideline)</p>
+          <p>@todo decide if <code>p-</code> should be included or if <code>s-</code> is enough</p>
         </section>
-        <section>
-          <h2><code>is-</code><code>has-</code> Modifier</h2>
-          <p>A temporary, optional or short-lived style</p>
-          <p>ie:<b>is-awesome</b> or<b>has-mullet</b></p>
+        <section><h3 id="pages">pages</h3>
+<p>@todo replace with description from docs</p>
+<pre><code class="lang-bash">app/lib/styles/pages
+├── checkout.styl
+├── home.styl
+├── my-account.styl
+└── search.styl
+</code></pre>
+
         </section>
-        <section>
-          <h2><code>t-</code> Theme</h2>
-          <p>Anything within could have a different theme applied.</p>
-          <p>ie:<b>t-panda-express</b> or<b>t-zaxbys</b></p>
+        <section><h2 id="-p-page"><code>p-</code> page</h2>
+<p>Specifically scoped to a page/section a site</p>
+<p>ie: <strong>p-checkout</strong> or <strong>p-my-account</strong></p>
+
         </section>
-        <section>
-          <h2><code>s-</code> Scoped</h2>
-          <p>Specifically scoped to a single </p>
-          <section>or page.</section>
-          <p>ie:<b>s-coupon-table</b> or<b>s-purchase-requirements</b></p>
+        <section><h2 id="-t-theme"><code>t-</code> Theme</h2>
+<p>Anything within could have a different theme applied.
+ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
+
+        </section>
+        <section><h2 id="-js-javascript"><code>js-</code> Javascript</h2>
+<p>Used to bind javascript to elements. </p>
+<p>We should never have styling and behaviour bound to the same hooks, otherwise we can&#39;t have one without the other</p>
+<p>ie: <strong>js-nav</strong> or <strong>js-modal</strong></p>
+
+        </section>
+        <section><h3 id="namespaces-can-also-delineate-modifications">Namespaces can also delineate modifications</h3>
+<p>(SMACSS Guideline)</p>
+
+        </section>
+        <section><h2 id="-is-has-modifier"><code>is-</code>/<code>has-</code> Modifier</h2>
+<p>A temporary, optional or short-lived style</p>
+<p>ie: <code>.is-awesome</code> or <code>.has-mullet</code></p>
+
+        </section>
+        <section><h3 id="dev">dev</h3>
+<p>@todo replace with description from docs</p>
+<pre><code class="lang-bash">app/lib/styles/dev
+├── _media.styl
+├── _namespaces.styl
+└── index.styl
+</code></pre>
+
         </section>
         <section>
           <h1>Bring it together</h1>
           <p>Now, our css & html read like a story.</p>
           <p>Let's see it in action!</p>
         </section>
-        <section>
-          <p>Namespaced & BEM</p>
-          <pre></pre>
+        <section><h3 id="namespaced-bem">Namespaced &amp; BEM</h3>
+<pre><code class="lang-html">&lt;html class=&quot;t-light has-overlay&quot;&gt;
+  ...
+  &lt;article class=&quot;c-modal c-modal--wide is-open&quot;&gt;
+    &lt;header class=&quot;c-modal__header o-headline&quot;&gt;
+      ...
+    &lt;/header&gt;
+    &lt;div class=&quot;c-modal__content&quot;&gt;
+      ...
+    &lt;/div&gt;
+    &lt;footer class=&quot;c-modal__footer o-actions&quot;&gt;
+      &lt;button href=&quot;c-btn c-btn--tertiary o-actions__item&quot;&gt;Cancel&lt;/button&gt;
+      &lt;button href=&quot;c-btn c-btn--secondary o-actions__item&quot;&gt;Confirm&lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+  ...
+  &lt;footer class=&quot;s-footer&quot;&gt;
+    &lt;section class=&quot;c-social o-grid o-grid--four-columns&quot;&gt;
+      &lt;a href=&quot;...&quot;&gt;Facebook&lt;/a&gt;
+      &lt;a href=&quot;...&quot;&gt;Twitter&lt;/a&gt;
+      &lt;a href=&quot;...&quot;&gt;Google Plus&lt;/a&gt;
+      &lt;a href=&quot;...&quot;&gt;Instagram&lt;/a&gt;
+    &lt;/section&gt;
+    &lt;small class=&quot;c-copyright _c-copyright u-text-center&quot;&gt;...&lt;/small&gt;
+  &lt;/footer&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+
         </section>
-        <section>
-          <p>vs Bootstrap & Custom Styles</p>
-          <pre></pre>
+        <section><p>Structure vs Bootstrap &amp; Custom Styles</p>
+<pre><code class="lang-html">&lt;html&gt;
+  ...
+  &lt;div class=&quot;modal fade&quot; id=&quot;exampleModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+      &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+          ...
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+          ...
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Send message&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;footer class=&quot;footer&quot;&gt;
+    &lt;section class=&quot;social container-fluid&quot; style=&quot;top: 330px; display: none;&quot;&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Facebook&lt;/a&gt;
+        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Twitter&lt;/a&gt;
+        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Google Plus&lt;/a&gt;
+        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Instagram&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;small class=&quot;copyright text-center&quot;&gt;...&lt;/small&gt;
+  &lt;/footer&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+
         </section>
-        <section>
-          <h3>More Benefits to namespacing</h3>
-          <ul>
-            <li>Find all the hacks, fast!</li>
-            <li><b>See</b> all the utils, hacks, etc on a given page fast</li>
-          </ul>
-          <pre></pre>
+        <section><h3 id="more-benefits-to-namespacing">More Benefits to namespacing</h3>
+<ul>
+<li>Find all the hacks, fast!</li>
+<li><strong>See</strong> all the utils, hacks, etc on a given page fast<pre><code class="lang-css">[class^=&#39;u-&#39;], [class*=&#39; u-&#39;] {
+outline: 5px solid cyan !important; // all the utils classes!
+}
+</code></pre>
+</li>
+</ul>
+
         </section>
-        <section>
-          <h1>Example</h1>
-          <p>Let's look at feature/clientOffersList</p>
+        <section><h1 id="example">Example</h1>
+<p>Let&#39;s look at feature/clientOffersList</p>
+
         </section>
-        <section>
-          <h3>Recommendation</h3>
-          <ul>
-            <li>Switch to Stylus</li>
-            <li>Implement a folder structure</li>
-            <li>Create simple variables</li>
-            <li>Use a color function</li>
-          </ul>
+        <section><h3 id="recommendation">Recommendation</h3>
+<ul>
+<li>Switch to Stylus</li>
+<li>Implement a folder structure</li>
+<li>Create simple variables</li>
+<li>Use a color function</li>
+</ul>
+
         </section>
-        <section>
-          <h1>Questions?</h1>
+        <section><h1 id="questions-">Questions?</h1>
+
         </section>
       </div>
     </div>

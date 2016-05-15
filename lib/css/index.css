@@ -1369,7 +1369,7 @@ html:-moz-full-screen-ancestor {
     font-size: 0.8em;
   }
 }
-.hljs {
+.reveal .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
@@ -1377,150 +1377,96 @@ html:-moz-full-screen-ancestor {
   color: #dcdcdc;
   -webkit-text-size-adjust: none;
 }
-.hljs-keyword,
-.hljs-tag,
-.css .hljs-class,
-.css .hljs-id,
-.lisp .hljs-title,
-.nginx .hljs-title,
-.hljs-request,
-.hljs-status,
-.clojure .hljs-attribute {
+.reveal .hljs-keyword,
+.reveal .hljs-tag,
+.reveal .css .hljs-class,
+.reveal .css .hljs-id,
+.reveal .lisp .hljs-title,
+.reveal .nginx .hljs-title,
+.reveal .hljs-request,
+.reveal .hljs-status,
+.reveal .clojure .hljs-attribute {
   color: #e3ceab;
 }
-.django .hljs-template_tag,
-.django .hljs-variable,
-.django .hljs-filter .hljs-argument {
+.reveal .django .hljs-template_tag,
+.reveal .django .hljs-variable,
+.reveal .django .hljs-filter .hljs-argument {
   color: #dcdcdc;
 }
-.hljs-number,
-.hljs-date {
+.reveal .hljs-number,
+.reveal .hljs-date {
   color: #8cd0d3;
 }
-.dos .hljs-envvar,
-.dos .hljs-stream,
-.hljs-variable,
-.apache .hljs-sqbracket,
-.hljs-name {
+.reveal .dos .hljs-envvar,
+.reveal .dos .hljs-stream,
+.reveal .hljs-variable,
+.reveal .apache .hljs-sqbracket,
+.reveal .hljs-name {
   color: #efdcbc;
 }
-.dos .hljs-flow,
-.diff .hljs-change,
-.python .exception,
-.python .hljs-built_in,
-.hljs-literal,
-.tex .hljs-special {
+.reveal .dos .hljs-flow,
+.reveal .diff .hljs-change,
+.reveal .python .exception,
+.reveal .python .hljs-built_in,
+.reveal .hljs-literal,
+.reveal .tex .hljs-special {
   color: #efefaf;
 }
-.diff .hljs-chunk,
-.hljs-subst {
+.reveal .diff .hljs-chunk,
+.reveal .hljs-subst {
   color: #8f8f8f;
 }
-.dos .hljs-keyword,
-.hljs-decorator,
-.hljs-title,
-.hljs-type,
-.diff .hljs-header,
-.ruby .hljs-class .hljs-parent,
-.apache .hljs-tag,
-.nginx .hljs-built_in,
-.tex .hljs-command,
-.hljs-prompt {
+.reveal .dos .hljs-keyword,
+.reveal .hljs-decorator,
+.reveal .hljs-title,
+.reveal .hljs-type,
+.reveal .diff .hljs-header,
+.reveal .ruby .hljs-class .hljs-parent,
+.reveal .apache .hljs-tag,
+.reveal .nginx .hljs-built_in,
+.reveal .tex .hljs-command,
+.reveal .hljs-prompt {
   color: #efef8f;
 }
-.dos .hljs-winutils,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.ruby .hljs-string {
+.reveal .dos .hljs-winutils,
+.reveal .ruby .hljs-symbol,
+.reveal .ruby .hljs-symbol .hljs-string,
+.reveal .ruby .hljs-string {
   color: #dca3a3;
 }
-.diff .hljs-deletion,
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-built_in,
-.smalltalk .hljs-class,
-.smalltalk .hljs-localvars,
-.smalltalk .hljs-array,
-.css .hljs-rule .hljs-value,
-.hljs-attr_selector,
-.hljs-pseudo,
-.apache .hljs-cbracket,
-.tex .hljs-formula,
-.coffeescript .hljs-attribute {
+.reveal .diff .hljs-deletion,
+.reveal .hljs-string,
+.reveal .hljs-tag .hljs-value,
+.reveal .hljs-preprocessor,
+.reveal .hljs-pragma,
+.reveal .hljs-built_in,
+.reveal .smalltalk .hljs-class,
+.reveal .smalltalk .hljs-localvars,
+.reveal .smalltalk .hljs-array,
+.reveal .css .hljs-rule .hljs-value,
+.reveal .hljs-attr_selector,
+.reveal .hljs-pseudo,
+.reveal .apache .hljs-cbracket,
+.reveal .tex .hljs-formula,
+.reveal .coffeescript .hljs-attribute {
   color: #cc9393;
 }
-.hljs-shebang,
-.diff .hljs-addition,
-.hljs-comment,
-.hljs-annotation,
-.hljs-pi,
-.hljs-doctype {
+.reveal .hljs-shebang,
+.reveal .diff .hljs-addition,
+.reveal .hljs-comment,
+.reveal .hljs-annotation,
+.reveal .hljs-pi,
+.reveal .hljs-doctype {
   color: #7f9f7f;
 }
-.coffeescript .javascript,
-.javascript .xml,
-.tex .hljs-formula,
-.xml .javascript,
-.xml .vbscript,
-.xml .css,
-.xml .hljs-cdata {
+.reveal .coffeescript .javascript,
+.reveal .javascript .xml,
+.reveal .tex .hljs-formula,
+.reveal .xml .javascript,
+.reveal .xml .vbscript,
+.reveal .xml .css,
+.reveal .xml .hljs-cdata {
   opacity: 0.5;
-}
-.reveal a {
-  color: #009688;
-}
-.reveal a:hover,
-.reveal a:focus {
-  color: #00dec9;
-}
-.reveal a:active {
-  color: #00786d;
-}
-.reveal button:focus {
-  outline: none;
-}
-.reveal section.has-light-background,
-.reveal section.has-light-background h1,
-.reveal section.has-light-background h2,
-.reveal section.has-light-background h3,
-.reveal section.has-light-background h4,
-.reveal section.has-light-background h5,
-.reveal section.has-light-background h6 {
-  color: #222;
-}
-.reveal code {
-  font-family: 'Source Code Pro' !important;
-  display: inline-block;
-  color: #eb606b;
-  background-color: rgba(251,223,225,0.9);
-  border-radius: 0.15em;
-  padding: 0 0.15em;
-  white-space: pre-wrap;
-}
-.reveal table {
-  border-collapse: collapse;
-  margin: auto;
-  border-spacing: 0px;
-}
-.reveal table th,
-.reveal table td {
-  text-align: center;
-  padding: 0.2em 0.5em;
-  border-bottom: 1px solid;
-}
-.reveal table th {
-  font-weight: bold;
-}
-.reveal table tr:last-child td {
-  border-bottom: none;
-}
-.reveal small {
-  display: inline-block;
-  font-size: 0.6em;
-  line-height: 1.2em;
-  vertical-align: top;
 }
 body {
   background: #1b2b34;
@@ -1772,4 +1718,126 @@ table .roll span:after {
 .reveal .progress span {
   background: #009688;
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+.reveal a {
+  color: #009688;
+}
+.reveal a:hover,
+.reveal a:focus {
+  color: #00dec9;
+}
+.reveal a:active {
+  color: #00786d;
+}
+.reveal button:focus {
+  outline: none;
+}
+.reveal section.has-light-background,
+.reveal section.has-light-background h1,
+.reveal section.has-light-background h2,
+.reveal section.has-light-background h3,
+.reveal section.has-light-background h4,
+.reveal section.has-light-background h5,
+.reveal section.has-light-background h6 {
+  color: #222;
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: initial;
+}
+.reveal h1 code:not(.hljs),
+.reveal h2 code:not(.hljs),
+.reveal h3 code:not(.hljs),
+.reveal h4 code:not(.hljs),
+.reveal h5 code:not(.hljs),
+.reveal h6 code:not(.hljs) {
+  line-height: 1.2em;
+  position: relative;
+  top: -0.15em;
+}
+.reveal pre {
+  width: auto;
+}
+.reveal code:not(.hljs) {
+  font: 0.75em/1.45em 'Source Code Pro';
+  display: inline-block;
+  color: #eb606b;
+  background-color: rgba(251,223,225,0.9);
+  border-radius: 0.15em;
+  padding: 0 0.15em;
+  white-space: pre-wrap;
+}
+.reveal table {
+  border-collapse: collapse;
+  margin: auto;
+  border-spacing: 0px;
+}
+.reveal table th,
+.reveal table td {
+  text-align: center;
+  padding: 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+.reveal table th {
+  font-weight: bold;
+}
+.reveal table tr:last-child td {
+  border-bottom: none;
+}
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+.reveal .c-specificity {
+  background: rgba(255,255,255,0.12);
+  perspective: 400px;
+}
+.reveal .c-specificity__top,
+.reveal .c-specificity__side {
+  border-bottom: 3px solid #fff;
+}
+.reveal .c-specificity__top {
+  margin: 0 auto;
+  width: 375px;
+}
+.reveal .c-specificity__side {
+  transform: rotate(-90deg) translate(-46%, -109%);
+  width: 68%;
+}
+.reveal .c-specificity__img {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  margin: -55px 0 0;
+}
+.reveal body {
+  counter-reset: extraneous;
+}
+.reveal .slide-background.is-extraneous {
+  display: block !important;
+  counter-increment: extraneous;
+}
+.reveal .slide-background.is-extraneous:after,
+.reveal .slide-background.is-extraneous:before {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+.reveal .slide-background.is-extraneous:before {
+  border-left: 100px solid transparent;
+  border-top: 100px solid #009688;
+  content: '';
+  height: 0;
+  width: 0;
+}
+.reveal .slide-background.is-extraneous:after {
+  content: counter(extraneous);
+  padding: 10px 20px 0 0;
+  text-align: right;
 }
