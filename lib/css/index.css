@@ -1762,6 +1762,9 @@ table .roll span:after {
 .reveal pre {
   width: auto;
 }
+.reveal pre code {
+  max-height: 600px;
+}
 .reveal code:not(.hljs) {
   font: 0.75em/1.45em 'Source Code Pro';
   display: inline-block;
@@ -1787,6 +1790,37 @@ table .roll span:after {
 }
 .reveal table tr:last-child td {
   border-bottom: none;
+}
+.reveal iframe {
+  width: 100%;
+}
+.reveal .c-iframe {
+  background: #fff;
+  min-height: 500px;
+}
+.reveal .c-btn,
+.reveal [class^='c-btn--'],
+.reveal [class*=' c-btn--'] {
+  background: #009688;
+  color: #fff !important;
+  padding: 10px;
+  font-size: 0.8em;
+}
+.reveal .c-btn + .c-btn,
+.reveal [class^='c-btn--'] + .c-btn,
+.reveal [class*=' c-btn--'] + .c-btn,
+.reveal .c-btn + [class^='c-btn--'],
+.reveal [class^='c-btn--'] + [class^='c-btn--'],
+.reveal [class*=' c-btn--'] + [class^='c-btn--'],
+.reveal .c-btn + [class*=' c-btn--'],
+.reveal [class^='c-btn--'] + [class*=' c-btn--'],
+.reveal [class*=' c-btn--'] + [class*=' c-btn--'] {
+  margin-left: 10px;
+}
+.reveal .c-btn.is-active,
+.reveal [class^='c-btn--'].is-active,
+.reveal [class*=' c-btn--'].is-active {
+  background: #00786d;
 }
 .reveal small {
   display: inline-block;
@@ -1816,6 +1850,15 @@ table .roll span:after {
   box-shadow: none;
   margin: -55px 0 0;
 }
+.reveal .u-hide {
+  opacity: 0;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -1000em;
+  left: -1000em;
+  white-space: pre;
+}
 .reveal body {
   counter-reset: extraneous;
 }
@@ -1840,4 +1883,237 @@ table .roll span:after {
   content: counter(extraneous);
   padding: 10px 20px 0 0;
   text-align: right;
+}
+.reveal .c-specificity {
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  position: relative;
+  font-size: 0.25em;
+  margin-bottom: 40px;
+}
+@media (min-width: 500px) {
+  .reveal .c-specificity {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 700px) {
+  .reveal .c-specificity {
+    font-size: 0.9em;
+  }
+}
+.reveal .c-specificity__graph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+}
+.reveal .c-specificity .line-path {
+  fill: none;
+  stroke: #00baa9;
+  stroke-width: 1px;
+}
+.reveal .c-specificity .group .line-path {
+  stroke: inherit;
+}
+.reveal .c-specificity .group--bem .line-path {
+  fill: #eb606b;
+  stroke: #eb606b;
+}
+.reveal .c-specificity .group--bem .dots__dot {
+  fill: #93121d;
+}
+.reveal [data-type=bem] {
+  background: #eb606b;
+}
+.reveal [data-type=bem]:hover,
+.reveal [data-type=bem].is-active {
+  background: #e42534;
+}
+.reveal .c-specificity .group--bootstrap .line-path {
+  fill: #c594c5;
+  stroke: #c594c5;
+}
+.reveal .c-specificity .group--bootstrap .dots__dot {
+  fill: #703d70;
+}
+.reveal [data-type=bootstrap] {
+  background: #c594c5;
+}
+.reveal [data-type=bootstrap]:hover,
+.reveal [data-type=bootstrap].is-active {
+  background: #ad67ad;
+}
+.reveal .c-specificity .group--foundation .line-path {
+  fill: #ab7967;
+  stroke: #ab7967;
+}
+.reveal .c-specificity .group--foundation .dots__dot {
+  fill: #583b31;
+}
+.reveal [data-type=foundation] {
+  background: #ab7967;
+}
+.reveal [data-type=foundation]:hover,
+.reveal [data-type=foundation].is-active {
+  background: #8d5f4e;
+}
+.reveal .c-specificity .group--isotonix .line-path {
+  fill: #f99157;
+  stroke: #f99157;
+}
+.reveal .c-specificity .group--isotonix .dots__dot {
+  fill: #a23e06;
+}
+.reveal [data-type=isotonix] {
+  background: #f99157;
+}
+.reveal [data-type=isotonix]:hover,
+.reveal [data-type=isotonix].is-active {
+  background: #f76716;
+}
+.reveal .c-specificity .group--inuit .line-path {
+  fill: #69c;
+  stroke: #69c;
+}
+.reveal .c-specificity .group--inuit .dots__dot {
+  fill: #264c73;
+}
+.reveal [data-type=inuit] {
+  background: #69c;
+}
+.reveal [data-type=inuit]:hover,
+.reveal [data-type=inuit].is-active {
+  background: #3d7ab8;
+}
+.reveal .c-specificity .group--pure .line-path {
+  fill: #fac863;
+  stroke: #fac863;
+}
+.reveal .c-specificity .group--pure .dots__dot {
+  fill: #a97305;
+}
+.reveal [data-type=pure] {
+  background: #fac863;
+}
+.reveal [data-type=pure]:hover,
+.reveal [data-type=pure].is-active {
+  background: #f8b01f;
+}
+.reveal .c-specificity .group--uikit .line-path {
+  fill: #99c794;
+  stroke: #99c794;
+}
+.reveal .c-specificity .group--uikit .dots__dot {
+  fill: #41723c;
+}
+.reveal [data-type=uikit] {
+  background: #99c794;
+}
+.reveal [data-type=uikit]:hover,
+.reveal [data-type=uikit].is-active {
+  background: #6eaf66;
+}
+.reveal .c-specificity .axis {
+  opacity: 0.6;
+}
+.reveal .c-specificity .tick {
+  display: none;
+  font-size: 0.35em;
+}
+.reveal .c-specificity .tick text {
+  font-size: 1em;
+  fill: rgba(255,255,255,0.85);
+}
+.reveal .c-specificity .has-ticks .tick {
+  display: block;
+}
+.reveal .c-specificity .domain {
+  fill: #fff;
+  stroke: #fff;
+}
+.reveal .c-specificity .domain-label {
+  font-size: 0.5em;
+  margin-top: 10px;
+  fill: #fff;
+}
+.reveal .c-specificity .legend {
+  fill: none;
+  font-size: 0.5em;
+}
+.reveal .c-specificity .legend text {
+  fill: #fff;
+}
+.reveal .c-specificity .overlay {
+  fill: none;
+  pointer-events: all;
+}
+.reveal .c-specificity .info {
+  font-size: 0.5em;
+  fill: none;
+}
+.reveal .c-specificity .info__item {
+  fill: #fff;
+}
+.reveal .c-specificity .indicators__point {
+  fill: none;
+  stroke-width: 1px;
+  stroke: #0c0;
+}
+.reveal .c-specificity .indicators__point--bem {
+  stroke: #fff;
+  fill: #93121d;
+}
+.reveal .c-specificity .indicators__point--bootstrap {
+  stroke: #fff;
+  fill: #703d70;
+}
+.reveal .c-specificity .indicators__point--foundation {
+  stroke: #fff;
+  fill: #583b31;
+}
+.reveal .c-specificity .indicators__point--isotonix {
+  stroke: #fff;
+  fill: #a23e06;
+}
+.reveal .c-specificity .indicators__point--inuit {
+  stroke: #fff;
+  fill: #264c73;
+}
+.reveal .c-specificity .indicators__point--pure {
+  stroke: #fff;
+  fill: #a97305;
+}
+.reveal .c-specificity .indicators__point--uikit {
+  stroke: #fff;
+  fill: #41723c;
+}
+.reveal .c-specificity .line-path.is-active {
+  animation: dash 3s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  animation-delay: 1s;
+}
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

@@ -4,8 +4,9 @@ section
     
     ```bash
     app/lib/styles/base
-    ├── defaults.styl // global defaults(box-sizing reset etc)
-    ├── elements.styl
+    ├── _defaults.styl // global defaults(box-sizing reset etc)
+    ├── _elements.styl
+    ├── _typography.styl
     ├── ...
     └── index.styl
     ```
@@ -14,3 +15,38 @@ section
     li.fragment Global defaults(`box-sizing` and anything that affects everything)
     li.fragment Element defaults(`ul`, `ol`, etc.)
     li.fragment Typography (`h1-h6`, `p`, etc.)
+
+section
+  :marked
+    ```stylus
+    // app/lib/styles/base/_defaults.styl
+    // Axiomatic CSS
+    *
+      border-color inherit // Makes border color inhert the border color of the parent element and not the color.
+      box-sizing border-box // Resets the `box-model` to what it should have been.
+      margin 0 // Removes margin from all elements
+      outline none // Removes the `outline` from all elements
+      &:after, &:before
+        box-sizing: inherit; // pseudo elements inherit it's parent box-sizing style.
+        position: absolute; // Pseudo elements are absolutely positioned by default because it's more common than not
+      
+      // http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+      &:not(script):not(link):not(meta):not(style) ~ *
+        margin-top 1em // This should reduce the bloat of declaring vertical spacing on every single element/component.
+        
+    // Resets the root elements to not have a margin.
+    body > * 
+      margin-top: 0; // 8
+        
+    html
+      color: $config.color; // Sets the default color for the site
+      font: $config.font-size/$config.line-height $config.font-family; // Defines the default font family and line height
+      overflow-x hidden // Ensures elements that are off the page won't effect the current layout
+      position relative
+      // Default iOS settings
+      -webkit-tap-highlight-color rgba(black, 0)
+      -webkit-text-size-adjust 100%
+      -webkit-touch-callout none
+      -ms-touch-select none // Enable WP8 fastclick
+    ```
+  

@@ -1,15 +1,8 @@
 section
-  :marked
-    # Structure
+  h1 Organized site-level css
     
-    Organized site-level css
-    
-    Solves the problem of difficulty locating styles
-
-
-//- already mentioned in the methodologies section but I think it's fine to repeat
-section
-  h1 Structure CSS:
+  p Solves the problem of difficulty locating styles
+  
   ul
     li Generic to explicit
     li Low specificity to high specificity
@@ -21,25 +14,40 @@ section
     
     ```bash
     app/lib/styles/
-    ├── base/
-    ├── components/
-    ├── pages/
-    ├── scopes/
     ├── tools/
+    ├── base/
+    ├── objects/
+    ├── components/
     ├── utilities/
+    ├── scopes/
+    ├── pages/
+    ├── dev/
     └── index.styl
     ```
 
 include tools
 include base
-include components
+
+section
+  h1 Namespacing
+  p Giving styles programmatic context.
+  p Solves the problems of Context
+  
+section
+  :marked
+    ### Scenario:
+    This style is being naughty: `.table-row__header`
+    What could happen if I change this style?
+
 include objects
+include components
 include utilities
 include scopes
 include pages
 include themes
 include javascript
 include states
+include hack
 include dev
 
 //- section.s-larger-code(style="display: none;")
