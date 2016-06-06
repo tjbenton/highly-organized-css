@@ -54,7 +54,6 @@ section
         order: 'y'
       })
       
-      //- animateLine()
       document.addEventListener('click', function(e) {
         var obj = e.target
         if (obj && obj.matches('.js-graph__toggle')) {
@@ -65,28 +64,10 @@ section
           })
           obj.classList.toggle('is-active')
           graph.toggle(id, css_libs[id])
-          //- animateLine()
           graph.draw()
         }
       })
     })
-    
-    function animateLine() {
-      //- let path = document.querySelector('svg .group .line-path')
-      //- let length = path.getTotalLength()
-      //- path.style['stroke-dasharray'] = length
-      //- path.style['stroke-dashoffset'] = length
-      //- path.classList.remove('is-active')
-      //- path.classList.add('is-active')
-    }
-
-section
-  :marked
-    [specificity.keegan.st](https://specificity.keegan.st)
-    
-    [jonassebastianohlsson.com/specificity-graph](https://jonassebastianohlsson.com/specificity-graph)
-    
-    Google `css specificity check` and they're the first 2 results
 
 section.is-extraneous
   :marked

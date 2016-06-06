@@ -109,7 +109,6 @@
                 order: 'y'
               })
               
-              //- animateLine()
               document.addEventListener('click', function(e) {
                 var obj = e.target
                 if (obj && obj.matches('.js-graph__toggle')) {
@@ -120,27 +119,12 @@
                   })
                   obj.classList.toggle('is-active')
                   graph.toggle(id, css_libs[id])
-                  //- animateLine()
                   graph.draw()
                 }
               })
             })
             
-            function animateLine() {
-              //- let path = document.querySelector('svg .group .line-path')
-              //- let length = path.getTotalLength()
-              //- path.style['stroke-dasharray'] = length
-              //- path.style['stroke-dashoffset'] = length
-              //- path.classList.remove('is-active')
-              //- path.classList.add('is-active')
-            }
-            
           </script>
-        </section>
-        <section><p><a href="https://specificity.keegan.st">specificity.keegan.st</a></p>
-<p><a href="https://jonassebastianohlsson.com/specificity-graph">jonassebastianohlsson.com/specificity-graph</a></p>
-<p>Google <code>css specificity check</code> and they&#39;re the first 2 results</p>
-
         </section>
         <section class="is-extraneous"><ul>
 <li>Give up <code>#id</code>s</li>
@@ -150,8 +134,8 @@
 
         </section>
         <section><h1 id="bem">BEM</h1>
-<p><a href="https://en.bem.info/methodology/">https://en.bem.info/methodology/</a>
-<a href="http://getbem.com/introduction/">http://getbem.com/introduction/</a></p>
+<p><a href="https://en.bem.info/methodology">en.bem.info/methodology</a>
+<a href="http://getbem.com/introduction">getbem.com/introduction</a></p>
 <h3 id="block-element-modifier">Block | Element | Modifier</h3>
 <p>Solves the problems of Specificity, Context, &amp; Consistency</p>
 <pre><code class="lang-scss">.block {}
@@ -164,6 +148,7 @@
 <ul>
 <li>Avoids Nesting (single-level specificity)</li>
 <li>Clear picture of what CSS &amp; HTML are doing</li>
+<li>No Guessing</li>
 <li>Clearly deliniates components</li>
 <li>Scales marvelously</li>
 </ul>
@@ -234,10 +219,10 @@
         </section>
         <section><h1 id="preprocessors">Preprocessors</h1>
 <ul>
-<li>Less</li>
-<li>Sass</li>
-<li>Stylus</li>
-<li>PostCSS</li>
+<li><a href="http://lesscss.org">Less</a></li>
+<li><a href="http://sass-lang.com">Sass</a></li>
+<li><a href="http://stylus-lang.com">Stylus</a></li>
+<li><a href="http://postcss.org">PostCSS</a></li>
 </ul>
 <p>For indepth info <a href="csspre.com/compare">csspre.com/compare</a></p>
 
@@ -292,7 +277,7 @@
 </code></pre>
 
         </section>
-        <section><h1 id="base">base</h1>
+        <section><h1 id="base-styles">Base Styles</h1>
 <pre><code class="lang-bash">app/lib/styles/base
 ├── _defaults.styl // global defaults(box-sizing reset etc)
 ├── _elements.styl
@@ -302,41 +287,57 @@
 </code></pre>
 
           <ul>
-            <li class="fragment">Reset stylesheets(normalize.css)</li>
-            <li class="fragment">Global defaults(`box-sizing` and anything that affects everything)</li>
-            <li class="fragment">Element defaults(`ul`, `ol`, etc.)</li>
-            <li class="fragment">Typography (`h1-h6`, `p`, etc.)</li>
+            <li class="fragment">Reset stylesheets(<em>normalize.css</em>)</li>
+            <li class="fragment">Global defaults(<code>box-sizing</code> and anything that affects everything)</li>
+            <li class="fragment">Element defaults(<code>ul</code>, <code>ol</code>, etc.)</li>
+            <li class="fragment">Typography (<code>h1-h6</code>, <code>p</code>, etc.)</li>
           </ul>
         </section>
         <section><pre><code class="lang-stylus">// app/lib/styles/base/_defaults.styl
 // Axiomatic CSS
-*
-  border-color inherit // Makes border color inhert the border color of the parent element and not the color.
-  box-sizing border-box // Resets the `box-model` to what it should have been.
+* {
+  // Makes border color inhert the border color of the 
+  // parent element and not the color.
+  border-color inherit
+  // Resets the box-model to what it should have been.
+  box-sizing border-box
   margin 0 // Removes margin from all elements
-  outline none // Removes the `outline` from all elements
-  &amp;:after, &amp;:before
-    box-sizing: inherit; // pseudo elements inherit it&#39;s parent box-sizing style.
-    position: absolute; // Pseudo elements are absolutely positioned by default because it&#39;s more common than not
+  outline none // Removes `outline` from all elements
 
+  &amp;:after, &amp;:before {
+    // pseudo elements inherit it&#39;s parent box-sizing style.
+    box-sizing inherit
+    // Pseudo elements are absolutely positioned by default 
+    // because it&#39;s more common than not
+    position absolute
+  }
+
+  // This should reduce the bloat of declaring vertical spacing on every 
+  // single element/component.
   // http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
-  &amp;:not(script):not(link):not(meta):not(style) ~ *
-    margin-top 1em // This should reduce the bloat of declaring vertical spacing on every single element/component.
+  &amp;:not(script):not(link):not(meta):not(style) ~ * {
+    margin-top $spacing
+  }
+}
 
 // Resets the root elements to not have a margin.
-body &gt; * 
-  margin-top: 0; // 8
+body &gt; * {
+  margin-top 0
+}
 
-html
-  color: $config.color; // Sets the default color for the site
-  font: $config.font-size/$config.line-height $config.font-family; // Defines the default font family and line height
-  overflow-x hidden // Ensures elements that are off the page won&#39;t effect the current layout
-  position relative
+html {
+  // Sets the default color, and font for the site
+  color: $config.color; 
+  font: $config.font-size/$config.line-height $config.font-family; 
+  // Ensures elements that are off the page won&#39;t 
+  // effect the current layout
+  overflow-x hidden 
   // Default iOS settings
   -webkit-tap-highlight-color rgba(black, 0)
   -webkit-text-size-adjust 100%
   -webkit-touch-callout none
   -ms-touch-select none // Enable WP8 fastclick
+}
 </code></pre>
 
         </section>
@@ -345,15 +346,9 @@ html
           <p>Giving styles programmatic context.</p>
           <p>Solves the problems of Context</p>
         </section>
-        <section><h3 id="scenario-">Scenario:</h3>
-<p>This style is being naughty: <code>.table-row__header</code>
-What could happen if I change this style?</p>
-
-        </section>
         <section><h2 id="-o-object"><code>o-</code> Object</h2>
-<p>@todo Add better description</p>
-<p>Abstract box-model only piece of UI. (Similar to component, but more reusable)</p>
-<p>ie: <code>.o-wrapper</code> or <code>.o-list</code></p>
+<p>format: <code>.o-object-name[&lt;element&gt;|&lt;modifier&gt;]{}</code></p>
+<p>Purely structural aspects of a UI, that are repetitive, shared, and used in any number of unrelated contexts    </p>
 <pre><code class="lang-bash">app/lib/styles/objects
 ├── _grid.styl
 ├── _spacing.styl
@@ -362,9 +357,33 @@ What could happen if I change this style?</p>
 </code></pre>
 
         </section>
+        <section><p><a href="http://codepen.io/tjbenton21/pen/jrbqWO">codepen.io/tjbenton21/pen/jrbqWO</a></p>
+<pre><code class="lang-stylus">$spacing ?= 1.5em
+
+.o-wrapper {  
+  padding-left $spacing
+  padding-right $spacing
+
+  &amp;__full {
+    padding-left 0
+    padding-right 0
+  }
+
+  &amp;__full, &amp;__inverted {
+    margin-left $spacing * -1
+    margin-right $spacing * -1
+  }
+
+  &amp;__inverted {
+    padding-left $spacing
+    padding-right $spacing
+  } 
+}
+</code></pre>
+
+        </section>
         <section><h2 id="-c-component"><code>c-</code> Component</h2>
 <p>A Concrete, standalone, implementation specific piece of UI.</p>
-<p>ie: c-card c-button</p>
 <pre><code class="lang-bash">app/lib/styles/components
 ├── _alerts.styl
 ├── _badges.styl
@@ -374,8 +393,11 @@ What could happen if I change this style?</p>
 </code></pre>
 
         </section>
-        <section><h3 id="utilities">utilities</h3>
-<p>@todo replace with description from docs</p>
+        <section><h1 id="add-examples-of-a-component">Add examples of a component</h1>
+
+        </section>
+        <section><h2 id="-u-utilities"><code>u-</code> Utilities</h2>
+<p>A class with a single, specific, trustworthy role. That should not be bound onto or changed.</p>
 <pre><code class="lang-bash">app/lib/styles/utilities
 ├── _animations.styl
 ├── _clear.styl
@@ -385,14 +407,39 @@ What could happen if I change this style?</p>
 </code></pre>
 
         </section>
-        <section>
-          <h2><code>u-</code> Utility</h2>
-          <p>A class with a single, specific, trustworthy role.</p>
-          <p>ie:<b>u-pull-left</b> or<b>u-hide</b></p>
+        <section><h1 id="add-examples-of-a-util">Add examples of a util</h1>
+<p><code>u-pull-left</code> or <code>u-hide</code></p>
+
         </section>
-        <section><h3 id="scoped">scoped</h3>
-<p>Where section-specific site-level css lives.</p>
-<p>@todo replace with description from docs</p>
+        <section><h2 id="-p-pages"><code>p-</code> Pages</h2>
+<p>Written specifically for a page/section of a site</p>
+<pre><code class="lang-bash">app/lib/styles/pages
+├── checkout.styl
+├── home.styl
+├── my-account.styl
+└── search.styl
+</code></pre>
+
+        </section>
+        <section><h1 id="add-examples-of-a-page">Add examples of a page</h1>
+<p>ie: <strong>p-checkout</strong> or <strong>p-my-account</strong></p>
+
+        </section>
+        <section><h2 id="-t-theme"><code>t-</code> Theme</h2>
+<p>It lets us know that UI Components&#39; current cosmetic appearance may be due to the presence of a theme.</p>
+<pre><code class="lang-bash">app/lib/styles/themes
+├── _secondary.styl
+└── index.styl
+</code></pre>
+
+        </section>
+        <section><h1 id="add-examples-of-a-themes">Add examples of a themes</h1>
+<p>ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
+
+        </section>
+        <section><h2 id="-s-scoped"><code>s-</code> Scoped</h2>
+<p>New styling context or Scope. These should be used sparingly 
+because they can lead to poor CSS if not used wisely.</p>
 <pre><code class="lang-bash">app/lib/styles/scopes
 ├── _content.styl
 ├── _footer.styl
@@ -402,56 +449,47 @@ What could happen if I change this style?</p>
 </code></pre>
 
         </section>
-        <section><h2 id="-s-scoped"><code>s-</code> Scoped</h2>
-<p>Specifically scoped to a single section or page.</p>
+        <section><h1 id="add-examples-of-a-scopes">Add examples of a scopes</h1>
 <p>ie: <strong>s-coupon-table</strong> or <strong>s-purchase-requirements</strong></p>
 
         </section>
-        <section>
-          <p>@todo decide if <code>p-</code> should be included or if <code>s-</code> is enough</p>
-        </section>
-        <section><h3 id="pages">pages</h3>
-<p>@todo replace with description from docs</p>
-<pre><code class="lang-bash">app/lib/styles/pages
-├── checkout.styl
-├── home.styl
-├── my-account.styl
-└── search.styl
-</code></pre>
-
-        </section>
-        <section><h2 id="-p-page"><code>p-</code> page</h2>
-<p>Specifically scoped to a page/section a site</p>
-<p>ie: <strong>p-checkout</strong> or <strong>p-my-account</strong></p>
-
-        </section>
-        <section><h2 id="-t-theme"><code>t-</code> Theme</h2>
-<p>Anything within could have a different theme applied.
-ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
-
-        </section>
         <section><h2 id="-js-javascript"><code>js-</code> Javascript</h2>
-<p>Used to bind javascript to elements. </p>
-<p>We should never have styling and behaviour bound to the same hooks, otherwise we can&#39;t have one without the other</p>
+<p>Used to bind javascript to elements.</p>
+<p>You should never have styling and behaviour bound to the same hooks, otherwise we can&#39;t have one without the other.</p>
+
+        </section>
+        <section><h1 id="add-examples-of-a-js">Add examples of a js</h1>
+<p>Should note why it&#39;s important to decouple the js</p>
 <p>ie: <strong>js-nav</strong> or <strong>js-modal</strong></p>
 
         </section>
-        <section><h3 id="namespaces-can-also-delineate-modifications">Namespaces can also delineate modifications</h3>
-<p>(SMACSS Guideline)</p>
+        <section><h2 id="-is-has-state"><code>is-</code>/<code>has-</code> State</h2>
+<ul>
+<li>A short-lived style temporary states of the UI that need styling accordingly.</li>
+<li>Never write a bare State class.</li>
+<li>Bound to specific classes.</li>
+</ul>
 
         </section>
-        <section><h2 id="-is-has-modifier"><code>is-</code>/<code>has-</code> Modifier</h2>
-<p>A temporary, optional or short-lived style</p>
+        <section><h1 id="add-examples-of-statefull-classes">Add examples of statefull classes</h1>
 <p>ie: <code>.is-awesome</code> or <code>.has-mullet</code></p>
 
         </section>
         <section><h2 id="-_-hack"><code>_-</code> Hack</h2>
-<p>When the worst happens.</p>
-<p>ie: <strong>_-ie9-just-cant-focus</strong> or <strong>_-die-ie-die</strong></p>
+<p>Used for hotfixes and shouldn&#39;t live forever. </p>
+<p>A spin off of <a href="http://csswizardry.com/2013/04/shame-css">shame.css</a></p>
+<p>ie: <code>_-ie9-just-cant-focus</code> or <code>_-die-ie-die</code></p>
 
         </section>
-        <section><h3 id="dev">dev</h3>
-<p>@todo replace with description from docs</p>
+        <section><h2 id="-qa-quality-assurance"><code>qa-</code> Quality assurance</h2>
+<p>Signify that the QA team is running an automated UI test 
+which needs to find or bind onto these parts of the DOM. </p>
+<p>ie: <code>qa-login</code></p>
+
+        </section>
+        <section><h2 id="-d-development"><code>d-</code> Development</h2>
+<p>It&#39;s used to help in the development processes to add temporary classes to help with bugs.
+These classes will never make it to production code. </p>
 <pre><code class="lang-bash">app/lib/styles/dev
 ├── _media.styl
 ├── _namespaces.styl
@@ -468,12 +506,8 @@ ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
 <pre><code class="lang-html">&lt;html class=&quot;t-light has-overlay&quot;&gt;
   ...
   &lt;article class=&quot;c-modal c-modal--wide is-open&quot;&gt;
-    &lt;header class=&quot;c-modal__header o-headline&quot;&gt;
-      ...
-    &lt;/header&gt;
-    &lt;div class=&quot;c-modal__content&quot;&gt;
-      ...
-    &lt;/div&gt;
+    &lt;header class=&quot;c-modal__header o-headline&quot;&gt;...&lt;/header&gt;
+    &lt;div class=&quot;c-modal__content&quot;&gt;...&lt;/div&gt;
     &lt;footer class=&quot;c-modal__footer o-actions&quot;&gt;
       &lt;button href=&quot;c-btn c-btn--tertiary o-actions__item&quot;&gt;Cancel&lt;/button&gt;
       &lt;button href=&quot;c-btn c-btn--secondary o-actions__item&quot;&gt;Confirm&lt;/button&gt;
@@ -482,12 +516,11 @@ ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
   ...
   &lt;footer class=&quot;s-footer&quot;&gt;
     &lt;section class=&quot;c-social o-grid o-grid--four-columns&quot;&gt;
-      &lt;a href=&quot;...&quot;&gt;Facebook&lt;/a&gt;
-      &lt;a href=&quot;...&quot;&gt;Twitter&lt;/a&gt;
-      &lt;a href=&quot;...&quot;&gt;Google Plus&lt;/a&gt;
-      &lt;a href=&quot;...&quot;&gt;Instagram&lt;/a&gt;
+      &lt;a class=&quot;c-social__brand u-icon--facebook o-pseudo--middle&quot; href=&quot;...&quot;&gt;Facebook&lt;/a&gt;
+      &lt;a class=&quot;c-social__brand u-icon--facebook o-pseudo--middle&quot; href=&quot;...&quot;&gt;Twitter&lt;/a&gt;
+      &lt;a class=&quot;c-social__brand u-icon--facebook o-pseudo--middle&quot; href=&quot;...&quot;&gt;Instagram&lt;/a&gt;
     &lt;/section&gt;
-    &lt;small class=&quot;c-copyright _c-copyright u-text-center&quot;&gt;...&lt;/small&gt;
+    &lt;small class=&quot;c-copyright u-text-center&quot;&gt;...&lt;/small&gt;
   &lt;/footer&gt;
   ...
 &lt;/html&gt;
@@ -500,12 +533,8 @@ ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
   &lt;div class=&quot;modal fade&quot; id=&quot;exampleModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot;&gt;
     &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
       &lt;div class=&quot;modal-content&quot;&gt;
-        &lt;div class=&quot;modal-header&quot;&gt;
-          ...
-        &lt;/div&gt;
-        &lt;div class=&quot;modal-body&quot;&gt;
-          ...
-        &lt;/div&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;...&lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;...&lt;/div&gt;
         &lt;div class=&quot;modal-footer&quot;&gt;
           &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
           &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Send message&lt;/button&gt;
@@ -516,10 +545,9 @@ ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
   &lt;footer class=&quot;footer&quot;&gt;
     &lt;section class=&quot;social container-fluid&quot; style=&quot;top: 330px; display: none;&quot;&gt;
       &lt;div class=&quot;row&quot;&gt;
-        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Facebook&lt;/a&gt;
-        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Twitter&lt;/a&gt;
-        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Google Plus&lt;/a&gt;
-        &lt;a href=&quot;...&quot; class=&quot;col-3&quot;&gt;Instagram&lt;/a&gt;
+        &lt;a class=&quot;glyphicon glyphicon-facebook&quot; href=&quot;...&quot; class=&quot;col-3&quot;&gt;Facebook&lt;/a&gt;
+        &lt;a class=&quot;glyphicon glyphicon-twitter&quot; href=&quot;...&quot; class=&quot;col-3&quot;&gt;Twitter&lt;/a&gt;
+        &lt;a class=&quot;glyphicon glyphicon-instagram&quot; href=&quot;...&quot; class=&quot;col-3&quot;&gt;Instagram&lt;/a&gt;
       &lt;/div&gt;
     &lt;/section&gt;
     &lt;small class=&quot;copyright text-center&quot;&gt;...&lt;/small&gt;
@@ -537,19 +565,6 @@ outline: 5px solid cyan !important; // all the utils classes!
 }
 </code></pre>
 </li>
-</ul>
-
-        </section>
-        <section><h1 id="example">Example</h1>
-<p>Let&#39;s look at feature/clientOffersList</p>
-
-        </section>
-        <section><h3 id="recommendation">Recommendation</h3>
-<ul>
-<li>Switch to Stylus</li>
-<li>Implement a folder structure</li>
-<li>Create simple variables</li>
-<li>Use a color function</li>
 </ul>
 
         </section>

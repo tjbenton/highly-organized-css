@@ -1922,102 +1922,102 @@ table .roll span:after {
   stroke: inherit;
 }
 .reveal .c-specificity .group--bem .line-path {
-  fill: #eb606b;
-  stroke: #eb606b;
+  fill: #e74350;
+  stroke: #e74350;
 }
 .reveal .c-specificity .group--bem .dots__dot {
-  fill: #93121d;
+  fill: #ee7b84;
 }
 .reveal [data-type=bem] {
-  background: #eb606b;
+  background: #e74350;
 }
 .reveal [data-type=bem]:hover,
 .reveal [data-type=bem].is-active {
-  background: #e42534;
+  background: #ec6973;
 }
 .reveal .c-specificity .group--bootstrap .line-path {
-  fill: #c594c5;
-  stroke: #c594c5;
+  fill: #b97eb9;
+  stroke: #b97eb9;
 }
 .reveal .c-specificity .group--bootstrap .dots__dot {
-  fill: #703d70;
+  fill: #cea5ce;
 }
 .reveal [data-type=bootstrap] {
-  background: #c594c5;
+  background: #b97eb9;
 }
 .reveal [data-type=bootstrap]:hover,
 .reveal [data-type=bootstrap].is-active {
-  background: #ad67ad;
+  background: #c798c7;
 }
 .reveal .c-specificity .group--foundation .line-path {
-  fill: #ab7967;
-  stroke: #ab7967;
+  fill: #9f6b58;
+  stroke: #9f6b58;
 }
 .reveal .c-specificity .group--foundation .dots__dot {
-  fill: #583b31;
+  fill: #bd9788;
 }
 .reveal [data-type=foundation] {
-  background: #ab7967;
+  background: #9f6b58;
 }
 .reveal [data-type=foundation]:hover,
 .reveal [data-type=foundation].is-active {
-  background: #8d5f4e;
+  background: #b48878;
 }
 .reveal .c-specificity .group--isotonix .line-path {
-  fill: #f99157;
-  stroke: #f99157;
+  fill: #f87c37;
+  stroke: #f87c37;
 }
 .reveal .c-specificity .group--isotonix .dots__dot {
-  fill: #a23e06;
+  fill: #faa373;
 }
 .reveal [data-type=isotonix] {
-  background: #f99157;
+  background: #f87c37;
 }
 .reveal [data-type=isotonix]:hover,
 .reveal [data-type=isotonix].is-active {
-  background: #f76716;
+  background: #f9965f;
 }
 .reveal .c-specificity .group--inuit .line-path {
-  fill: #69c;
-  stroke: #69c;
+  fill: #4f8ac4;
+  stroke: #4f8ac4;
 }
 .reveal .c-specificity .group--inuit .dots__dot {
-  fill: #264c73;
+  fill: #84add6;
 }
 .reveal [data-type=inuit] {
-  background: #69c;
+  background: #4f8ac4;
 }
 .reveal [data-type=inuit]:hover,
 .reveal [data-type=inuit].is-active {
-  background: #3d7ab8;
+  background: #72a1d0;
 }
 .reveal .c-specificity .group--pure .line-path {
-  fill: #fac863;
-  stroke: #fac863;
+  fill: #f9bc41;
+  stroke: #f9bc41;
 }
 .reveal .c-specificity .group--pure .dots__dot {
-  fill: #a97305;
+  fill: #fbd07a;
 }
 .reveal [data-type=pure] {
-  background: #fac863;
+  background: #f9bc41;
 }
 .reveal [data-type=pure]:hover,
 .reveal [data-type=pure].is-active {
-  background: #f8b01f;
+  background: #fac967;
 }
 .reveal .c-specificity .group--uikit .line-path {
-  fill: #99c794;
-  stroke: #99c794;
+  fill: #83bb7d;
+  stroke: #83bb7d;
 }
 .reveal .c-specificity .group--uikit .dots__dot {
-  fill: #41723c;
+  fill: #a8cfa4;
 }
 .reveal [data-type=uikit] {
-  background: #99c794;
+  background: #83bb7d;
 }
 .reveal [data-type=uikit]:hover,
 .reveal [data-type=uikit].is-active {
-  background: #6eaf66;
+  background: #9cc997;
 }
 .reveal .c-specificity .axis {
   opacity: 0.6;

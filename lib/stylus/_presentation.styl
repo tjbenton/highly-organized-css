@@ -188,16 +188,17 @@ $groups = {
       stroke inherit
 
     for $key, $val in $groups
+      $val = darken($val, 10%)
       &--{$key}
         .line-path
           fill $val
           stroke $val
         .dots__dot
-          fill darken($val, 50%)
+          fill lighten($val, 30%)
       /.reveal [data-type={$key}]
         background $val
         &:hover, &.is-active
-          background darken($val, 20%)
+          background lighten($val, 20%)
 
   .axis
       opacity .6

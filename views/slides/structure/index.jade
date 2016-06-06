@@ -32,67 +32,15 @@ section
   h1 Namespacing
   p Giving styles programmatic context.
   p Solves the problems of Context
-  
-section
-  :marked
-    ### Scenario:
-    This style is being naughty: `.table-row__header`
-    What could happen if I change this style?
 
 include objects
 include components
 include utilities
-include scopes
 include pages
 include themes
+include scopes
 include javascript
 include states
 include hack
+include qa
 include dev
-
-//- section.s-larger-code(style="display: none;")
-//-   style.
-//-     .s-larger-code pre code {
-//-       max-height: 600px;
-//-     }
-//-   :marked
-//-     ```bash
-//-     app/lib/styles/
-//-     ├── base/
-//-     │   ├── ...
-//-     │   └── index.styl
-//-     ├── components/
-//-     │   ├── ...
-//-     │   └── index.styl
-//-     ├── tools/
-//-     │   ├── ...
-//-     │   └── index.styl
-//-     ├── objects/
-//-     │   ├── ...
-//-     │   └── index.styl
-//-     ├── pages/
-//-     │   └── ...
-//-     ├── scopes/
-//-     │   ├── ...
-//-     │   └── index.styl
-//-     ├── utilities/
-//-     │   ├── ...
-//-     │   └── index.styl
-//-     └── index.styl
-//-     ```
-
-//- section
-//-   :marked
-//-     # **/index.styl
-//-     
-//-     ```stylus
-//-     @require '_*'
-//-     ```
-//-     
-//-     or
-//-     
-//-     ```stylus
-//-     @require '_file-1'
-//-     @require '_file-2'
-//-     ..etc
-//-     ```
