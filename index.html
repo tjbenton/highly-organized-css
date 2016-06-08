@@ -347,7 +347,7 @@ html {
           <p>Solves the problems of Context</p>
         </section>
         <section><h2 id="-o-object"><code>o-</code> Object</h2>
-<p>format: <code>.o-object-name[&lt;element&gt;|&lt;modifier&gt;]{}</code></p>
+<p>format: <code>.o-object-name[&lt;element&gt;|&lt;modifier&gt;] { }</code></p>
 <p>Purely structural aspects of a UI, that are repetitive, shared, and used in any number of unrelated contexts    </p>
 <pre><code class="lang-bash">app/lib/styles/objects
 ├── _grid.styl
@@ -383,6 +383,7 @@ html {
 
         </section>
         <section><h2 id="-c-component"><code>c-</code> Component</h2>
+<p>format: <code>.c-component-name[&lt;element&gt;|&lt;modifier&gt;] { }</code></p>
 <p>A Concrete, standalone, implementation specific piece of UI.</p>
 <pre><code class="lang-bash">app/lib/styles/components
 ├── _alerts.styl
@@ -393,10 +394,32 @@ html {
 </code></pre>
 
         </section>
-        <section><h1 id="add-examples-of-a-component">Add examples of a component</h1>
+        <section><a href="http://codepen.io/tjbenton21/pen/vOaXKM?editors=1100">codepen.io/tjbenton21/pen/vOaXKM</a>
+          <div><pre><code class="lang-scss">.c-btn {
+  ...
+  &amp;--primary {}
+  &amp;--secondary {}
+  &amp;--tertiary {}
+  &amp;--text {}
+  &amp;__badge {}
+}
+</code></pre>
 
+          </div>
+          <div class="fragment"><pre><code class="lang-scss">.c-card {
+  &amp;__image {}
+  &amp;__title {
+    &amp;--caption {}
+  }
+  &amp;__content {}
+  &amp;__actions {}
+}
+</code></pre>
+
+          </div>
         </section>
         <section><h2 id="-u-utilities"><code>u-</code> Utilities</h2>
+<p>format: .c-utility-name[<modifier>] { }</p>
 <p>A class with a single, specific, trustworthy role. That should not be bound onto or changed.</p>
 <pre><code class="lang-bash">app/lib/styles/utilities
 ├── _animations.styl
@@ -407,9 +430,30 @@ html {
 </code></pre>
 
         </section>
-        <section><h1 id="add-examples-of-a-util">Add examples of a util</h1>
-<p><code>u-pull-left</code> or <code>u-hide</code></p>
+        <section><pre><code class="lang-stylus">.u-icon {
+  // base styles
+  &amp;--facebook:before { ... }
+  &amp;--github:before { ... }
+}
+</code></pre>
 
+          <div class="fragment"><pre><code class="lang-stylus">.u-show {
+  display block !important
+}
+.u-hide {
+  display none !important
+}
+.u-invisible {
+  opacity 0 !important
+  visibility hidden !important
+}
+.u-visible {
+  opacity 1 !important
+  visibility visible !important
+}
+</code></pre>
+
+          </div>
         </section>
         <section><h2 id="-p-pages"><code>p-</code> Pages</h2>
 <p>Written specifically for a page/section of a site</p>
@@ -426,6 +470,7 @@ html {
 
         </section>
         <section><h2 id="-t-theme"><code>t-</code> Theme</h2>
+<p>format: <code>.t-theme-name {}</code></p>
 <p>It lets us know that UI Components&#39; current cosmetic appearance may be due to the presence of a theme.</p>
 <pre><code class="lang-bash">app/lib/styles/themes
 ├── _secondary.styl
@@ -433,12 +478,35 @@ html {
 </code></pre>
 
         </section>
-        <section><h1 id="add-examples-of-a-themes">Add examples of a themes</h1>
-<p>ie: <code>.t-chick-fil-a</code> or <code>.t-secondary</code></p>
+        <section><a href="http://codepen.io/tjbenton21/pen/ezpjYe">codepen.io/tjbenton21/pen/ezpjYe</a><pre><code class="lang-stylus">.t-secondary {
+  background #1abc9c
+  color white
+}
 
+.t-chick-fil-a {
+  background #b41933
+  color white
+}
+</code></pre>
+
+          <div class="fragment"><pre><code class="lang-stylus">// app/lib/styles/components/_buttons.styl
+.c-btn {
+  ... // base button styles
+  background #1abc9c
+  color white
+
+  .t-secondary &amp; {
+    background white
+    color #1abc9c
+  }
+}
+</code></pre>
+
+          </div>
         </section>
         <section><h2 id="-s-scoped"><code>s-</code> Scoped</h2>
-<p>New styling context or Scope. These should be used sparingly 
+<p>format: <code>.s-scope-name[&lt;element&gt;] { }</code></p>
+<p>New styling context. Scopes should be used sparingly 
 because they can lead to poor CSS if not used wisely.</p>
 <pre><code class="lang-bash">app/lib/styles/scopes
 ├── _content.styl
@@ -449,9 +517,28 @@ because they can lead to poor CSS if not used wisely.</p>
 </code></pre>
 
         </section>
-        <section><h1 id="add-examples-of-a-scopes">Add examples of a scopes</h1>
-<p>ie: <strong>s-coupon-table</strong> or <strong>s-purchase-requirements</strong></p>
+        <section><pre><code class="lang-stylus">.s-header {
+  a {}
+  nav a {}
+}
+</code></pre>
 
+          <div class="fragment"><pre><code class="lang-stylus">// Create a new styling context for any free-text 
+// CMS content (blog posts, news pages, etc.).
+.s-cms-content {
+  font 16px/1.5 serif
+
+  h1, h2, h3, h4, h5, h6 {
+    font bold 100%/1.5 sans-serif 
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+</code></pre>
+
+          </div>
         </section>
         <section><h2 id="-js-javascript"><code>js-</code> Javascript</h2>
 <p>Used to bind javascript to elements.</p>

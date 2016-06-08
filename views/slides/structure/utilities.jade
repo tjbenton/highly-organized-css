@@ -1,6 +1,10 @@
+//- Immutable object
+
 section
   :marked
     ## `u-` Utilities
+    
+    format: .c-utility-name[<modifier>] { }
     
     A class with a single, specific, trustworthy role. That should not be bound onto or changed.
       
@@ -15,5 +19,28 @@ section
 
 section
   :marked
-    # Add examples of a util
-    `u-pull-left` or `u-hide`
+    ```stylus
+    .u-icon {
+      // base styles
+      &--facebook:before { ... }
+      &--github:before { ... }
+    }
+    ```
+  .fragment
+    :marked
+      ```stylus
+      .u-show {
+        display block !important
+      }
+      .u-hide {
+        display none !important
+      }
+      .u-invisible {
+        opacity 0 !important
+        visibility hidden !important
+      }
+      .u-visible {
+        opacity 1 !important
+        visibility visible !important
+      }
+      ```

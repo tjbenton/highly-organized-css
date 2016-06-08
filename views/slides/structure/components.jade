@@ -2,6 +2,8 @@ section
   :marked
     ## `c-` Component
     
+    format: `.c-component-name[<element>|<modifier>] { }`
+    
     A Concrete, standalone, implementation specific piece of UI.
     
     ```bash
@@ -14,5 +16,29 @@ section
     ```
     
 section
-  :marked
-    # Add examples of a component
+  a(href='http://codepen.io/tjbenton21/pen/vOaXKM?editors=1100') codepen.io/tjbenton21/pen/vOaXKM
+  
+  div
+    :marked
+      ```scss
+      .c-btn {
+        ...
+        &--primary {}
+        &--secondary {}
+        &--tertiary {}
+        &--text {}
+        &__badge {}
+      }
+      ```
+  div.fragment
+    :marked
+      ```scss
+      .c-card {
+        &__image {}
+        &__title {
+          &--caption {}
+        }
+        &__content {}
+        &__actions {}
+      }
+      ```
