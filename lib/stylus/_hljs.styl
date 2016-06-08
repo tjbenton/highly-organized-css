@@ -1,0 +1,112 @@
+$colors = {
+  'darkgray': #1b2b34,
+  'gray': #65737e,
+  'lightgray': #cdd3de,
+  'teal': #009688,
+  'red': #eb606b,
+  'orange': #f99157,
+  'yellow': #fac863,
+  'green': #99c794,
+  'blue': #6699cc,
+  'purple': #c594c5,
+  'brown': #ab7967
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: $colors.darkgray;
+  color: white;
+}
+
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-code,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-function {
+  color: $colors.lightgray;
+}
+
+.hljs-string,
+.hljs-bullet {
+  color: $colors.green;
+}
+
+
+.hljs-title
+  color: $colors.blue;
+
+.hljs-hexcolor
+  color: $colors.teal;
+
+.hljs-built_in,
+.hljs-class
+  color: $colors.purple;
+
+.lang-css, .lang-stylus, .lang-scss, .lang-less
+  .hljs-attribute
+    color: $colors.yellow;
+
+.hljs-number,
+.hljs-symbol,
+.hljs-literal,
+.hljs-type,
+.hljs-bullet {
+  color: $colors.orange;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: $colors.red;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-code,
+.hljs-section,
+.hljs-quote,
+.hljs-builtin-name {
+  color: $colors.gray;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: pink;
+}
+
+.hljs-meta {
+  color: pink;
+}
+
+.hljs-deletion {
+  background-color: red;
+  color: black;
+}
+
+.hljs-addition {
+  background-color: green;
+  color: white;
+}
+
+.hljs a {
+  color: inherit;
+}
+
+.hljs a:focus,
+.hljs a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
