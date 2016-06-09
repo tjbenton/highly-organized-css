@@ -1,17 +1,3 @@
-$colors = {
-  'darkgray': #1b2b34,
-  'gray': #65737e,
-  'lightgray': #cdd3de,
-  'teal': #009688,
-  'red': #eb606b,
-  'orange': #f99157,
-  'yellow': #fac863,
-  'green': #99c794,
-  'blue': #6699cc,
-  'purple': #c594c5,
-  'brown': #ab7967
-}
-
 .hljs {
   display: block;
   overflow-x: auto;
@@ -45,31 +31,36 @@ $colors = {
 }
 
 
-.hljs-title
+.hljs-title,
+.hljs-function-name
   color: $colors.blue;
+[class='foo'] {
+  fuck me
+}
 
-.hljs-hexcolor
+
+.hljs-hexcolor,
+.hljs-character,
+.hljs-period .hljs-class
   color: $colors.teal;
 
 .hljs-built_in,
 .hljs-class
   color: $colors.purple;
 
-.lang-css, .lang-stylus, .lang-scss, .lang-less
-  .hljs-attribute
-    color: $colors.yellow;
-
 .hljs-number,
 .hljs-symbol,
 .hljs-literal,
 .hljs-type,
-.hljs-bullet {
+.hljs-bullet,
+.hljs-params {
   color: $colors.orange;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-tag {
+.hljs-tag,
+.hljs-attr_selector {
   color: $colors.red;
 }
 
@@ -100,6 +91,28 @@ $colors = {
   background-color: green;
   color: white;
 }
+
+.lang-css, .lang-stylus, .lang-scss, .lang-less
+  .hljs-attribute
+    color: $colors.yellow;
+
+.lang-html
+  .hljs-tag
+    color: $colors.teal;
+
+  .hljs-title
+    color: $colors.red;
+
+  .hljs-attribute
+    color: $colors.purple;
+
+  .hljs-value
+    color: $colors.green;
+
+.lang-js
+  .hljs-function .hljs-keyword
+    color: $colors.purple;
+
 
 .hljs a {
   color: inherit;

@@ -1,3 +1,22 @@
+.u-hide
+  display none
+
+.u-show
+  display block
+
+.slide-background.t-light
+  background: lighten($colors.lightgray, 60%);
+
+.u-parentheses
+  list-style none outside none
+  counter-reset list
+
+  li:before
+    content: counter(list, lower-alpha) ') ';
+    counter-increment: list;
+    margin-left: -0.75em;
+
+
 a
   color: $colors.teal;
   &:hover, &:focus
@@ -81,30 +100,6 @@ small
   font-size 0.6em
   line-height 1.2em
   vertical-align top
-
-
-.c-specificity
-  background rgba(white, 0.12)
-  perspective 400px
-  // width 70%
-  &__top,
-  &__side
-    border-bottom 3px solid white
-
-  &__top
-    margin 0 auto
-    width 375px
-
-  &__side
-    transform rotate(-90deg) translate(-46%, -109%)
-    width 68%
-
-  &__img
-    background none
-    border 0
-    box-shadow none
-    margin -55px 0 0
-
 
 .u-hide
   opacity 0

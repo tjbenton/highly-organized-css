@@ -2,12 +2,27 @@ section
   :marked
     ## `is-`/`has-` State
     
+    format: `.[is|has]-state { }`
+    
     - A short-lived style temporary states of the UI that need styling accordingly.
     - Never write a bare State class.
     - Bound to specific classes.
 
-section
+section.t-light
   :marked
-    # Add examples of statefull classes
-        
-    ie: `.is-awesome` or `.has-mullet`
+    ```html
+    <div class="c-modal is-open is-loading">
+      ...
+    </div>
+    ```
+  
+  .fragment
+    :marked
+      ```stylus
+      .c-modal {
+        ...
+        &.is-open { ... }
+
+        &.is-loading { ... }
+      }
+      ```

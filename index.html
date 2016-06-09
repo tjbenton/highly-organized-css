@@ -13,6 +13,7 @@
   </script>
   <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
   <script src="lib/js/specificity-graph-standalone.js"></script>
+  <script src="lib/js/index.js"></script>
   <body>
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide-->
@@ -53,24 +54,10 @@
             <li class="fragment">Difficult to maintain consistency</li>
           </ol>
         </section>
-        <section>
+        <section style="font-size: 1.75em;">
           <h3>Good News!</h3>
           <h1>It's Fixable!</h1>
           <h3>But How?</h3>
-        </section>
-        <section>
-          <div class="c-specificity">
-            <div class="c-specificity__top">Specificity</div>
-            <div class="c-specificity__side">Location in Stylesheet</div><img src="lib/images/specificity-01.svg" alt="Normal Specificity" class="c-specificity__img">
-          </div>
-          <p>Current state of most css stylesheets</p>
-        </section>
-        <section>
-          <div class="c-specificity">
-            <div class="c-specificity__top">Specificity</div>
-            <div class="c-specificity__side">Location in Stylesheet</div><img src="lib/images/specificity-02.svg" alt="Normal Specificity" class="c-specificity__img">
-          </div>
-          <p>What they should look like</p>
         </section>
         <section><h3 id="css-specificity">CSS Specificity</h3>
 <ul>
@@ -84,7 +71,7 @@
 
         </section>
         <section>
-          <p><a href="https://specificity.keegan.st">specificity.keegan.st</a></p>
+          <p>Specificity Calculator <a href="https://specificity.keegan.st">specificity.keegan.st</a></p>
           <iframe data-src="https://specificity.keegan.st/" class="c-iframe"></iframe>
         </section>
         <section> 
@@ -163,7 +150,7 @@
         <section class="is-extraneous"><h3 id="two-schools-of-thought-on-approaching-nested-classes">Two Schools of Thought on approaching nested classes</h3>
 
         </section>
-        <section class="is-extraneous"><h3 id="both-agree-not-to-do-this">Both agree not to do this</h3>
+        <section class="t-light is-extraneous"><h3 id="both-agree-not-to-do-this">Both agree not to do this</h3>
 <p>This is terribly verbose and also forces a DOM structure upon us; it is very inflexible</p>
 <pre><code class="lang-scss">.list
   .list__header
@@ -176,7 +163,7 @@
 </code></pre>
 
         </section>
-        <section class="is-extraneous"><h3 id="1-flattening-everything-to-be-on-the-same-level">1. Flattening everything to be on the same level</h3>
+        <section class="t-light is-extraneous"><h3 id="1-flattening-everything-to-be-on-the-same-level">1. Flattening everything to be on the same level</h3>
 <pre><code class="lang-scss">.list
   .list__header
   .list__items
@@ -188,7 +175,7 @@
 </code></pre>
 
         </section>
-        <section class="is-extraneous"><h3 id="2-separate-those-elements">2. Separate those elements</h3>
+        <section class="t-light is-extraneous"><h3 id="2-separate-those-elements">2. Separate those elements</h3>
 <pre><code class="lang-scss">.list
   .list__header
   .list__items
@@ -202,7 +189,7 @@
         <section class="is-extraneous"><p>A way to avoid this problem is to not Block your scope too high up.</p>
 
         </section>
-        <section class="is-extraneous"><pre><code class="lang-scss">.room
+        <section class="t-light is-extraneous"><pre><code class="lang-scss">.room
   .room__floor
   .room__desk
     .room__laptop
@@ -293,7 +280,7 @@
             <li class="fragment">Typography (<code>h1-h6</code>, <code>p</code>, etc.)</li>
           </ul>
         </section>
-        <section><pre><code class="lang-stylus">// app/lib/styles/base/_defaults.styl
+        <section class="t-light"><pre><code class="lang-stylus">// app/lib/styles/base/_defaults.styl
 // Axiomatic CSS
 * {
   // Makes border color inhert the border color of the 
@@ -357,7 +344,7 @@ html {
 </code></pre>
 
         </section>
-        <section><p><a href="http://codepen.io/tjbenton21/pen/jrbqWO">codepen.io/tjbenton21/pen/jrbqWO</a></p>
+        <section class="t-light"><p><a href="http://codepen.io/tjbenton21/pen/jrbqWO">codepen.io/tjbenton21/pen/jrbqWO</a></p>
 <pre><code class="lang-stylus">$spacing ?= 1.5em
 
 .o-wrapper {  
@@ -394,7 +381,7 @@ html {
 </code></pre>
 
         </section>
-        <section><a href="http://codepen.io/tjbenton21/pen/vOaXKM?editors=1100">codepen.io/tjbenton21/pen/vOaXKM</a>
+        <section class="t-light"><a href="http://codepen.io/tjbenton21/pen/vOaXKM?editors=1100">codepen.io/tjbenton21/pen/vOaXKM</a>
           <div><pre><code class="lang-scss">.c-btn {
   ...
   &amp;--primary {}
@@ -430,7 +417,7 @@ html {
 </code></pre>
 
         </section>
-        <section><pre><code class="lang-stylus">.u-icon {
+        <section class="t-light"><pre><code class="lang-stylus">.u-icon {
   // base styles
   &amp;--facebook:before { ... }
   &amp;--github:before { ... }
@@ -465,7 +452,7 @@ html {
 </code></pre>
 
         </section>
-        <section><h1 id="add-examples-of-a-page">Add examples of a page</h1>
+        <section class="t-light"><h1 id="add-examples-of-a-page">Add examples of a page</h1>
 <p>ie: <strong>p-checkout</strong> or <strong>p-my-account</strong></p>
 
         </section>
@@ -478,7 +465,7 @@ html {
 </code></pre>
 
         </section>
-        <section><a href="http://codepen.io/tjbenton21/pen/ezpjYe">codepen.io/tjbenton21/pen/ezpjYe</a><pre><code class="lang-stylus">.t-secondary {
+        <section class="t-light"><a href="http://codepen.io/tjbenton21/pen/ezpjYe">codepen.io/tjbenton21/pen/ezpjYe</a><pre><code class="lang-stylus">.t-secondary {
   background #1abc9c
   color white
 }
@@ -517,7 +504,7 @@ because they can lead to poor CSS if not used wisely.</p>
 </code></pre>
 
         </section>
-        <section><pre><code class="lang-stylus">.s-header {
+        <section class="t-light"><pre><code class="lang-stylus">.s-header {
   a {}
   nav a {}
 }
@@ -540,17 +527,8 @@ because they can lead to poor CSS if not used wisely.</p>
 
           </div>
         </section>
-        <section><h2 id="-js-javascript"><code>js-</code> Javascript</h2>
-<p>Used to bind javascript to elements.</p>
-<p>You should never have styling and behaviour bound to the same hooks, otherwise we can&#39;t have one without the other.</p>
-
-        </section>
-        <section><h1 id="add-examples-of-a-js">Add examples of a js</h1>
-<p>Should note why it&#39;s important to decouple the js</p>
-<p>ie: <strong>js-nav</strong> or <strong>js-modal</strong></p>
-
-        </section>
         <section><h2 id="-is-has-state"><code>is-</code>/<code>has-</code> State</h2>
+<p>format: <code>.[is|has]-state { }</code></p>
 <ul>
 <li>A short-lived style temporary states of the UI that need styling accordingly.</li>
 <li>Never write a bare State class.</li>
@@ -558,9 +536,120 @@ because they can lead to poor CSS if not used wisely.</p>
 </ul>
 
         </section>
-        <section><h1 id="add-examples-of-statefull-classes">Add examples of statefull classes</h1>
-<p>ie: <code>.is-awesome</code> or <code>.has-mullet</code></p>
+        <section class="t-light"><pre><code class="lang-html">&lt;div class=&quot;c-modal is-open is-loading&quot;&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
 
+          <div class="fragment"><pre><code class="lang-stylus">.c-modal {
+  ...
+  &amp;.is-open { ... }
+
+  &amp;.is-loading { ... }
+}
+</code></pre>
+
+          </div>
+        </section>
+        <section><h2 id="-js-javascript"><code>js-</code> Javascript</h2>
+<p>format: <code>.js-component-name[&lt;element&gt;] { }</code></p>
+<p>Used to bind javascript to elements.</p>
+
+        </section>
+        <section>
+          <h1 style="font-size: 5em">Why?</h1>
+        </section>
+        <section>
+          <ul style="font-size: 1.2em">
+            <li>You shouldn't bind styling and behaviour, otherwise we can't have one without the other.</li>
+            <li>Allows you to start reusing your js like you do your css.</li>
+            <li>Allows you to opt in to behaviours. </li>
+            <li>Spend less time refactoring your js.</li>
+            <li>Makes your js more reusable</li>
+          </ul>
+        </section>
+        <section class="t-light"><pre><code class="lang-html">&lt;ul class=&#39;c-list c-list--limit js-toggle&#39;&gt;
+  &lt;li class=&#39;c-list__item&#39;&gt; ... &lt;/li&gt;
+  &lt;li class=&#39;c-list__item&#39;&gt; ... &lt;/li&gt;
+  ... 10 more
+  &lt;li class=&#39;c-list__item&#39;&gt;
+    &lt;a class=&#39;js-toggle__trigger&#39; data-state=&quot;is-open&quot; data-text=&#39;Show Less&#39; href=&#39;&#39;&gt;Show More&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="lang-js">$(document).on(&#39;click&#39;, &#39;.js-toggle__trigger&#39;, function(e) {
+  e.preventDefault()
+  var $obj = $(this)
+  var $text_data = $obj.data(&#39;text&#39;)
+  if ($text_data) {
+    $obj.data(&#39;text&#39;, $obj.text()).text($text_data)
+  }
+  $obj.closest(&#39;.js-toggle&#39;).toggleClass($obj.data(&#39;state&#39;) || &#39;is-active&#39;)
+})
+</code></pre>
+
+        </section>
+        <section class="u-hide is-extraneous">
+          <ul style="font-size: 1.5em;">
+            <li>target.com</li>
+            <li>walmart.com</li>
+            <li>amazon.com</li>
+            <li>underarmour.com</li>
+          </ul>
+        </section>
+        <section class="t-light u-hide"><pre><code class="lang-html">&lt;div class=&quot;c-card&quot;&gt;
+  ...
+  &lt;a href=&quot;c-btn c-btn--bubble u-icon--plus&quot;&gt;Open overlay&lt;/a&gt;
+  &lt;div class=&quot;c-card__overlay&quot;&gt;
+    ...
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-js">$(&#39;.c-card&#39;).on(&#39;click&#39;, &#39;.c-btn--bubble&#39;, function(e) {
+  e.preventDefault();
+  $(this)
+    .parent()
+    .find(&#39;.c-card__overlay&#39;)
+    .addClass(&#39;is-open&#39;);
+});
+</code></pre>
+
+        </section>
+        <section class="u-hide">
+          <h1>3 months later...</h1>
+          <p class="fragment">Another <code>.c-btn--bubble</code> gets added and you have to refactor</p>
+        </section>
+        <section><h2 id="conditional-viewports">Conditional Viewports</h2>
+<p>format: <code>.[class]@&lt;breakpoint&gt;{}</code></p>
+<p>Viewport suffixes help keep things consistent and our namespaces intact</p>
+
+        </section>
+        <section class="t-light"><pre><code class="lang-css">.o-show { } /* all viewports */
+
+@media (min-width: 768px) {
+  .o-show\@md { } /* only the medium size viewport and up */
+}
+</code></pre>
+<pre><code class="lang-html">&lt;div class=&quot;u-hide u-show@md&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+
+        </section>
+        <section><h1 id="ordering-the-namespaces">Ordering The Namespaces</h1>
+
+        </section>
+        <section><code>s|t|(c|o|u)|((c|o|u)@(sm|md|lg|xl))|qa|js|is|has</code>
+          <ol>
+            <li class="fragment">scope</li>
+            <li class="fragment">theme</li>
+            <li class="fragment">
+              <ol class="u-parentheses">
+                <li>page, component, object, utility</li>
+                <li class="fragment">[page, component, object, utility]@<b>[sm, md, lg, xl]</b></li>
+              </ol>
+            </li>
+            <li class="fragment"><code>qa</code>, <code>js</code>, <code>is</code>, <code>has</code></li>
+          </ol>
         </section>
         <section><h2 id="-_-hack"><code>_-</code> Hack</h2>
 <p>Used for hotfixes and shouldn&#39;t live forever. </p>
@@ -593,7 +682,7 @@ These classes will never make it to production code. </p>
 <pre><code class="lang-html">&lt;html class=&quot;t-light has-overlay&quot;&gt;
   ...
   &lt;article class=&quot;c-modal c-modal--wide is-open&quot;&gt;
-    &lt;header class=&quot;c-modal__header o-headline&quot;&gt;...&lt;/header&gt;
+    &lt;header class=&quot;c-modal__header u-headline&quot;&gt;...&lt;/header&gt;
     &lt;div class=&quot;c-modal__content&quot;&gt;...&lt;/div&gt;
     &lt;footer class=&quot;c-modal__footer o-actions&quot;&gt;
       &lt;button href=&quot;c-btn c-btn--tertiary o-actions__item&quot;&gt;Cancel&lt;/button&gt;
@@ -602,7 +691,7 @@ These classes will never make it to production code. </p>
   &lt;/article&gt;
   ...
   &lt;footer class=&quot;s-footer&quot;&gt;
-    &lt;section class=&quot;c-social o-grid o-grid--four-columns&quot;&gt;
+    &lt;section class=&quot;c-social o-list&quot;&gt;
       &lt;a class=&quot;c-social__brand u-icon--facebook o-pseudo--middle&quot; href=&quot;...&quot;&gt;Facebook&lt;/a&gt;
       &lt;a class=&quot;c-social__brand u-icon--facebook o-pseudo--middle&quot; href=&quot;...&quot;&gt;Twitter&lt;/a&gt;
       &lt;a class=&quot;c-social__brand u-icon--facebook o-pseudo--middle&quot; href=&quot;...&quot;&gt;Instagram&lt;/a&gt;
@@ -614,7 +703,7 @@ These classes will never make it to production code. </p>
 </code></pre>
 
         </section>
-        <section><p>Structure vs Bootstrap &amp; Custom Styles</p>
+        <section class="u-hide is-extraneous"><p>Structure vs Bootstrap &amp; Custom Styles</p>
 <pre><code class="lang-html">&lt;html&gt;
   ...
   &lt;div class=&quot;modal fade&quot; id=&quot;exampleModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot;&gt;
@@ -644,16 +733,21 @@ These classes will never make it to production code. </p>
 </code></pre>
 
         </section>
-        <section><h3 id="more-benefits-to-namespacing">More Benefits to namespacing</h3>
-<ul>
+        <section>
+          <h1>More Benefits to namespacing</h1>
+        </section>
+        <section><ul>
 <li>Find all the hacks, fast!</li>
-<li><strong>See</strong> all the utils, hacks, etc on a given page fast<pre><code class="lang-css">[class^=&#39;u-&#39;], [class*=&#39; u-&#39;] {
-outline: 5px solid cyan !important; // all the utils classes!
+<li><strong>See</strong> all the utils, hacks, etc on a given page fast</li>
+</ul>
+<pre><code class="lang-css">[class^=&#39;u-&#39;], [class*=&#39; u-&#39;] {
+  outline: 5px solid cyan !important; // all the utils classes!
 }
 </code></pre>
-</li>
-</ul>
 
+        </section>
+        <section><p>Log all the namespaces used on the site <a href="http://bit.ly/1UoATQk">bit.ly/1UoATQk</a></p>
+<img data-src="lib/images/namespaces-console.jpg" alt="">
         </section>
         <section><h1 id="questions-">Questions?</h1>
 
@@ -663,24 +757,42 @@ outline: 5px solid cyan !important; // all the utils classes!
     <script src="lib/js/head.min.js"></script>
     <script src="lib/js/reveal.js"></script>
     <script>
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
-      });
+      document.addEventListener('DOMContentLoaded', function() {
+        ;[].slice.call(document.querySelectorAll('.u-hide'))
+          .forEach(function(section) {
+            section.parentNode.removeChild(section);
+          });
+          
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          transition: 'slide', // none/fade/slide/convex/concave/zoom
+          // Optional reveal.js plugins
+          dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { 
+              src: 'plugin/highlight/highlight.js', 
+              async: true, 
+              callback: function() { 
+                var evt = document.createEvent('HTMLEvents');
+                evt.initEvent('hljs', true, true);
+                ;[].slice.call(document.querySelectorAll('pre code:not(.nohighlight)'))
+                  .forEach(function(block, i) {
+                    block.dispatchEvent(evt)
+                  });
+              } 
+            },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+          ]
+        });  
+      })
     </script>
   </body>
 </html>
