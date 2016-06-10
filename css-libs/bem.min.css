@@ -260,6 +260,7 @@ dd {
   margin-left: 48px;
   margin-left: 3rem
 }
+
 html {
   font-size: 1em;
   line-height: 1.5;
@@ -1046,6 +1047,52 @@ blockquote q:after {
   background-position: -160px 0;
   height: 11px
 }
+
+.annotate {
+  position: relative
+}
+.annotate__image {
+  display: block;
+  border-radius: 3px
+}
+.annotate__list {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0
+}
+.annotate__item {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  cursor: help;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 3px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s
+}
+.annotate:hover .annotate__item {
+  border-color: #ccc;
+  border-color: rgba(255, 255, 255, 0.5)
+}
+.annotate:hover .annotate__item:hover {
+  z-index: 1;
+  border-color: #fff
+}
+.annotate__caption {
+  position: relative;
+  z-index: 1
+}
+
 .feature-list {
   margin-left: 0;
   padding: 0;
@@ -1119,50 +1166,6 @@ blockquote q:after {
   font-size: 12px;
   font-size: .75rem;
   line-height: 2
-}
-.annotate {
-  position: relative
-}
-.annotate__image {
-  display: block;
-  border-radius: 3px
-}
-.annotate__list {
-  list-style: none;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0
-}
-.annotate__item {
-  position: absolute;
-  width: 5%;
-  height: 5%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 100%;
-  cursor: help;
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 3px;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  transition: 0.2s
-}
-.annotate:hover .annotate__item {
-  border-color: #ccc;
-  border-color: rgba(255, 255, 255, 0.5)
-}
-.annotate:hover .annotate__item:hover {
-  z-index: 1;
-  border-color: #fff
-}
-.annotate__caption {
-  position: relative;
-  z-index: 1
 }
 .bsa_it_d {
   font-weight: 300
@@ -1300,6 +1303,83 @@ blockquote q:after {
 }
 .eleven-twelfths {
   width: 91.6666666% !important
+}
+.m {
+  margin: 24px !important
+}
+.mt {
+  margin-top: 24px !important
+}
+.mr {
+  margin-right: 24px !important
+}
+.mb {
+  margin-bottom: 24px !important
+}
+.ml {
+  margin-left: 24px !important
+}
+.mh {
+  margin-right: 24px !important;
+  margin-left: 24px !important
+}
+.mv {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important
+}
+.m\+\+ {
+  margin: 96px !important
+}
+.mt\+\+ {
+  margin-top: 96px !important
+}
+.mr\+\+ {
+  margin-right: 96px !important
+}
+.mb\+\+ {
+  margin-bottom: 96px !important
+}
+.ml\+\+ {
+  margin-left: 96px !important
+}
+.mh\+\+ {
+  margin-right: 96px !important;
+  margin-left: 96px !important
+}
+.mv\+\+ {
+  margin-top: 96px !important;
+  margin-bottom: 96px !important
+}
+.m0 {
+  margin: 0 !important
+}
+.mt0 {
+  margin-top: 0 !important
+}
+.mr0 {
+  margin-right: 0 !important
+}
+.mb0 {
+  margin-bottom: 0 !important
+}
+.ml0 {
+  margin-left: 0 !important
+}
+.mh0 {
+  margin-right: 0 !important;
+  margin-left: 0 !important
+}
+.mv0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important
+}
+.hide {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px)
 }
 @media screen and (max-width: 719px) {
   .palm-one-whole {
@@ -1525,83 +1605,7 @@ blockquote q:after {
     left: 10%
   }
 }
-.m {
-  margin: 24px !important
-}
-.mt {
-  margin-top: 24px !important
-}
-.mr {
-  margin-right: 24px !important
-}
-.mb {
-  margin-bottom: 24px !important
-}
-.ml {
-  margin-left: 24px !important
-}
-.mh {
-  margin-right: 24px !important;
-  margin-left: 24px !important
-}
-.mv {
-  margin-top: 24px !important;
-  margin-bottom: 24px !important
-}
-.m\+\+ {
-  margin: 96px !important
-}
-.mt\+\+ {
-  margin-top: 96px !important
-}
-.mr\+\+ {
-  margin-right: 96px !important
-}
-.mb\+\+ {
-  margin-bottom: 96px !important
-}
-.ml\+\+ {
-  margin-left: 96px !important
-}
-.mh\+\+ {
-  margin-right: 96px !important;
-  margin-left: 96px !important
-}
-.mv\+\+ {
-  margin-top: 96px !important;
-  margin-bottom: 96px !important
-}
-.m0 {
-  margin: 0 !important
-}
-.mt0 {
-  margin-top: 0 !important
-}
-.mr0 {
-  margin-right: 0 !important
-}
-.mb0 {
-  margin-bottom: 0 !important
-}
-.ml0 {
-  margin-left: 0 !important
-}
-.mh0 {
-  margin-right: 0 !important;
-  margin-left: 0 !important
-}
-.mv0 {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important
-}
-.hide {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px)
-}
+
 @media screen and (max-width: 719px) {
   .hide-palm {
     position: absolute !important;

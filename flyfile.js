@@ -55,7 +55,7 @@ export async function styles() {
 }
 
 export async function watch() {
-  await this.watch(path.join('css-libs', '**', '*.css'), 'specificity', 'jade')
+  await this.watch(path.join('css-libs', '**', '*.css'), [ 'specificity', 'jade' ])
   await this.watch(path.join('views', '**', '*.jade'), 'jade');
   await this.watch(path.join('lib', 'stylus', '**', '*.styl'), 'styles')
   const httpServer = spawn(path.join('.', 'node_modules', '.bin', 'http-server'), [])
