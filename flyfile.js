@@ -79,11 +79,15 @@ export async function watch() {
     console.log('Child exited with code ' + code)
   })
 
-  const server = livereload.createServer()
-  await server.watch([
-    path.join(__dirname, 'css'),
-    path.join(__dirname, 'js'),
-    path.join(__dirname, 'lib'),
-    path.join(__dirname, 'index.html')
-  ])
+  try {
+    const server = livereload.createServer()
+    await server.watch([
+      path.join(__dirname, 'css'),
+      path.join(__dirname, 'js'),
+      path.join(__dirname, 'lib'),
+      path.join(__dirname, 'index.html')
+    ])
+  } catch (e) {
+    console.log(e)
+  }
 }
