@@ -1,0 +1,49 @@
+section
+  h1 Organized site-level css
+    
+  p Solves the problem of difficulty locating styles
+  
+  ul
+    li Generic to explicit
+    li Low specificity to high specificity
+    li Far-reaching to localised
+
+section
+  :marked
+    ### Folder Structure
+    
+    ```bash
+    app/lib/styles/
+    ├── tools/
+    ├── base/
+    ├── objects/
+    ├── components/
+    ├── utilities/
+    ├── scopes/
+    ├── pages/
+    ├── dev/
+    └── index.styl
+    ```
+
+include tools
+include base
+
+section
+  h1 Namespacing
+  p Giving styles programmatic context.
+  p Solves the problems of Context
+
+include objects
+include components
+include utilities
+include pages
+include themes
+include scopes
+include states
+include javascript
+include conditional-viewports
+include order
+include hack
+include qa
+include dev
+include benefits

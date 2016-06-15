@@ -1,0 +1,71 @@
+section
+  :marked
+    ### CSS Specificity
+    
+      - `important`
+      - Inline `<style>` definitions
+      - `#id`
+      - attribute selector `[class*='awesome']`
+      - `.class`
+      - elements `p`
+
+section
+  p Specificity Calculator 
+    a(href="https://specificity.keegan.st") specificity.keegan.st
+  iframe.c-iframe(data-src="https://specificity.keegan.st/")
+
+section  
+  .c-specificity
+    svg.c-specificity__graph.js-graph
+  
+  each val, key in css_libs
+    a.c-btn--primary.js-graph__toggle(data-type="#{key}") #{key}
+
+  script!= 'var css_libs = ' + JSON.stringify(css_libs)
+  script.
+    var graph
+    Reveal.addEventListener('pkg', function(e) {
+      if (e.data === 'specificity') {
+        var keys = Object.keys(css_libs)
+        var toggles = [].slice.call(document.querySelectorAll('.js-graph__toggle'))
+        graph = new SpecificityGraph({
+          average: false,
+          important: true,
+          fill: true,
+          dots: true,
+          linetype: 'basis',
+          ticks: true,
+          order: 'y'
+        })
+        
+        document.addEventListener('click', function(e) {
+          var obj = e.target
+          if (obj && obj.matches('.js-graph__toggle')) {
+            var id = obj.dataset.type
+            e.preventDefault()
+            toggles.forEach(function(toggle) {
+              toggle.classList.remove('is-active')
+            })
+            obj.classList.toggle('is-active')
+            graph.toggle(id, css_libs[id])
+            graph.draw()
+          }
+        })
+      }
+      
+      //- window.addEventListener('message', function(event) {
+      //-   var data = JSON.parse( event.data );
+      //-   console.log(data)
+      //-   if (data.namespace === 'reveal' && data.eventName ==='slidechanged') {
+      //-       // Slide changed, see data.state for slide number
+      //-   }
+      //- });
+    })
+    
+    
+
+section.is-extraneous
+  :marked
+    - Give up `#id`s
+    - Stop nesting selectors so deeply
+    - Use a class based architecture

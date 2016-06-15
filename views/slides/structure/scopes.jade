@@ -1,0 +1,44 @@
+section
+  :marked
+    ## `s-` Scoped
+
+    format: `.s-scope-name[<element>] { }`
+    
+    New styling context. Scopes should be used sparingly 
+    because they can lead to poor CSS if not used wisely.
+    
+    ```bash
+    app/lib/styles/scopes
+    ├── _content.styl
+    ├── _footer.styl
+    ├── _google-places.styl # Any scoped overrides for 3rd party vendors
+    ├── _header.styl
+    └── index.styl
+    ```
+
+section.t-light
+  :marked
+    ```stylus
+    .s-header {
+      a {}
+      nav a {}
+    }
+    ```
+    
+  .fragment
+    :marked
+      ```stylus
+      // Create a new styling context for any free-text 
+      // CMS content (blog posts, news pages, etc.).
+      .s-cms-content {
+        font 16px/1.5 serif
+
+        h1, h2, h3, h4, h5, h6 {
+          font bold 100%/1.5 sans-serif 
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+      ```

@@ -1,0 +1,46 @@
+//- Immutable object
+
+section
+  :marked
+    ## `u-` Utilities
+    
+    format: .c-utility-name[<modifier>] { }
+    
+    A class with a single, specific, trustworthy role. That should not be bound onto or changed.
+      
+    ```bash
+    app/lib/styles/utilities
+    ├── _animations.styl
+    ├── _clear.styl
+    ├── _icons.styl
+    ├── _reset.styl
+    └── index.styl
+    ```
+
+section.t-light
+  :marked
+    ```stylus
+    .u-icon {
+      // base styles
+      &--facebook:before { ... }
+      &--github:before { ... }
+    }
+    ```
+  .fragment
+    :marked
+      ```stylus
+      .u-show {
+        display block !important
+      }
+      .u-hide {
+        display none !important
+      }
+      .u-invisible {
+        opacity 0 !important
+        visibility hidden !important
+      }
+      .u-visible {
+        opacity 1 !important
+        visibility visible !important
+      }
+      ```

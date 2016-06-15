@@ -1,0 +1,84 @@
+section
+  h1 Bring it together
+  p Now, our css & html read like a story.
+  p Let's see it in action!
+
+section
+  :marked
+    ### Namespaced & BEM
+    
+    ```html
+    <html class="t-light has-overlay">
+      ...
+      <article class="c-modal c-modal--wide is-open">
+        <header class="c-modal__header u-headline">...</header>
+        <div class="c-modal__content">...</div>
+        <footer class="c-modal__footer o-actions">
+          <button href="c-btn c-btn--tertiary o-actions__item">Cancel</button>
+          <button href="c-btn c-btn--secondary o-actions__item">Confirm</button>
+        </footer>
+      </article>
+      ...
+      <footer class="s-footer">
+        <section class="c-social o-list">
+          <a class="c-social__brand u-icon--facebook o-pseudo--middle" href="...">Facebook</a>
+          <a class="c-social__brand u-icon--facebook o-pseudo--middle" href="...">Twitter</a>
+          <a class="c-social__brand u-icon--facebook o-pseudo--middle" href="...">Instagram</a>
+        </section>
+        <small class="c-copyright u-text-center">...</small>
+      </footer>
+      ...
+    </html>
+    ```
+
+section.u-hide.is-extraneous
+  :marked
+    Structure vs Bootstrap & Custom Styles
+    ```html
+    <html>
+      ...
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">...</div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <section class="social container-fluid" style="top: 330px; display: none;">
+          <div class="row">
+            <a class="glyphicon glyphicon-facebook" href="..." class="col-3">Facebook</a>
+            <a class="glyphicon glyphicon-twitter" href="..." class="col-3">Twitter</a>
+            <a class="glyphicon glyphicon-instagram" href="..." class="col-3">Instagram</a>
+          </div>
+        </section>
+        <small class="copyright text-center">...</small>
+      </footer>
+      ...
+    </html>
+    ```
+
+section
+  h1 More Benefits to namespacing
+    
+section
+  :marked
+    - Find all the hacks, fast!
+    - **See** all the utils, hacks, etc on a given page fast
+    
+    ```css
+    [class^='u-'], [class*=' u-'] {
+      outline: 5px solid cyan !important; // all the utils classes!
+    }
+    ```
+    
+section
+  :marked
+    Log all the namespaces used on the site [bit.ly/1UoATQk](http://bit.ly/1UoATQk)
+    
+  img(data-src="lib/images/namespaces-console.jpg", alt="")

@@ -1,0 +1,69 @@
+section
+  :marked
+    # Base Styles
+    
+    ```bash
+    app/lib/styles/base
+    ├── _defaults.styl // global defaults(box-sizing reset etc)
+    ├── _elements.styl
+    ├── _typography.styl
+    ├── ...
+    └── index.styl
+    ```
+
+  ul
+    li.fragment Reset stylesheets(<em>normalize.css</em>)
+    li.fragment Global defaults(<code>box-sizing</code> and anything that affects everything)
+    li.fragment Element defaults(<code>ul</code>, <code>ol</code>, etc.)
+    li.fragment Typography (<code>h1-h6</code>, <code>p</code>, etc.)
+
+section.t-light
+  :marked
+    ```stylus
+    // app/lib/styles/base/_defaults.styl
+    // Axiomatic CSS
+    * {
+      // Makes border color inhert the border color of the 
+      // parent element and not the color.
+      border-color inherit
+      // Resets the box-model to what it should have been.
+      box-sizing border-box
+      margin 0 // Removes margin from all elements
+      outline none // Removes `outline` from all elements
+      
+      &:after, &:before {
+        // pseudo elements inherit it's parent box-sizing style.
+        box-sizing inherit
+        // Pseudo elements are absolutely positioned by default 
+        // because it's more common than not
+        position absolute
+      }
+      
+      // This should reduce the bloat of declaring vertical spacing on every 
+      // single element/component.
+      // http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+      &:not(script):not(link):not(meta):not(style) ~ * {
+        margin-top $spacing
+      }
+    }
+      
+    // Resets the root elements to not have a margin.
+    body > * {
+      margin-top 0
+    }
+        
+    html {
+      // Sets the default color, and font for the site
+      color: $config.color; 
+      font: $config.font-size/$config.line-height $config.font-family; 
+      // Ensures elements that are off the page won't 
+      // effect the current layout
+      overflow-x hidden 
+      // Default iOS settings
+      -webkit-tap-highlight-color rgba(black, 0)
+      -webkit-text-size-adjust 100%
+      -webkit-touch-callout none
+      -ms-touch-select none // Enable WP8 fastclick
+    }
+    ```
+  

@@ -1,0 +1,98 @@
+section
+  :marked
+    # BEM
+    [en.bem.info/methodology](https://en.bem.info/methodology)
+    [getbem.com/introduction](http://getbem.com/introduction)
+    ### Block | Element | Modifier
+    
+    Solves the problems of Specificity, Context, & Consistency
+    
+    ```scss
+    .block {}
+    .block__element {}
+    .block__element--modifier {}
+    ```
+
+section
+  :marked
+    ### What are BEM's Benefits?
+      - Avoids Nesting (single-level specificity)
+      - Clear picture of what CSS & HTML are doing
+      - No Guessing
+      - Clearly deliniates components
+      - Scales marvelously
+
+section
+  :marked
+    ### What are it's drawbacks
+      - Longer classes
+
+section.is-extraneous
+  :marked
+    ### Two Schools of Thought on approaching nested classes
+
+section.t-light.is-extraneous
+  :marked
+    ### Both agree not to do this
+    This is terribly verbose and also forces a DOM structure upon us; it is very inflexible
+    
+    ```scss
+    .list
+      .list__header
+      .list__items
+        .list__items__item
+          .list__items__item__title
+          .list__items__item__content
+          .list__items__item__actions
+      .list__footer
+    ```
+    
+section.t-light.is-extraneous
+  :marked
+    ### 1. Flattening everything to be on the same level
+    ```scss
+    .list
+      .list__header
+      .list__items
+        .list__item
+          .list__title
+          .list__content
+          .list__actions
+      .list__footer
+    ```
+    
+section.t-light.is-extraneous
+  :marked
+    ### 2. Separate those elements
+    ```scss
+    .list
+      .list__header
+      .list__items
+          .list-item
+            .list-item__header
+            .list-item__body
+      .list__footer
+    ```
+    
+section.is-extraneous
+  :marked
+    A way to avoid this problem is to not Block your scope too high up.
+
+section.t-light.is-extraneous
+  :marked
+    ```scss
+    .room
+      .room__floor
+      .room__desk
+        .room__laptop
+    ```
+    vs
+    
+    ```scss
+    .room
+      .room__floor
+
+    .desk
+
+    .laptop
+    ```

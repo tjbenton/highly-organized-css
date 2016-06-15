@@ -1,0 +1,19 @@
+meta(charset='utf-8')
+meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+title reveal.js
+link(rel="stylesheet", href='lib/css/index.css')
+script(src='lib/js/head.min.js')
+script(src='lib/js/reveal.js')
+
+mixin codepen(id)
+  - attributes['data-user'] = attributes['data-user'] || "mistersender"
+  p(
+    data-height="500"
+    data-theme-id="0"
+    data-slug-hash="#{id}"
+    data-default-tab="css"
+    data-user="tjbenton21"
+    data-embed-version="2"
+    class="codepen"
+  )&attributes(attributes)
+    | See the Pen <a href="http://codepen.io/#{attributes.data-user}/pen/#{id}/">Sample Website Theme using color functions</a> by Jessica Kennedy (<a href="http://codepen.io/mistersender">@mistersender</a>) on <a href="http://codepen.io">CodePen</a>.

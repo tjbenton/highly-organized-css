@@ -1,0 +1,19 @@
+section
+  :marked
+    # Ordering The Namespaces
+  
+  //- `<div class="is-open js-bar _c-bar o-foo--bar c-bar--quux o-foo@lg u-bar u-quux@sm o-foo o-quux o-foo--bar@lg c-bar s-quux"></div>`
+
+section
+  - var codelist = function(list) { return '<code>' + [].slice.call(arguments).join('</code>, <code>') + '</code>' }
+  - var list = codelist('page', 'component', 'object', 'utility')
+  code= 's|t|(c|o|u)|((c|o|u)@(sm|md|lg|xl))|qa|js|is|has'
+  ol
+    li.fragment scope
+    li.fragment theme
+    li.fragment
+      ol.u-parentheses
+        li page, component, object, utility
+        li.fragment [page, component, object, utility]@<b>[sm, md, lg, xl]</b>
+    li.fragment!= codelist('qa', 'js', 'is', 'has')
+

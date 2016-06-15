@@ -1,0 +1,77 @@
+section
+  :marked
+    ## `js-` Javascript
+    
+    format: `.js-component-name[<element>] { }`
+    
+    Used to bind javascript to elements.
+
+section
+  h1(style='font-size: 5em') Why?
+  
+section
+  ul(style='font-size: 1.2em')
+    li You shouldn't bind styling and behaviour, otherwise we can't have one without the other.
+    li Allows you to start reusing your js like you do your css.
+    li Allows you to opt in to behaviours. 
+    li Spend less time refactoring your js.
+    li Makes your js more reusable
+
+section.t-light
+  :marked
+    ```html
+    <ul class='c-list c-list--limit js-toggle'>
+      <li class='c-list__item'> ... </li>
+      <li class='c-list__item'> ... </li>
+      ... 10 more
+      <li class='c-list__item'>
+        <a class='js-toggle__trigger' data-state="is-open" data-text='Show Less' href=''>Show More</a>
+      </li>
+    </ul>
+    ```
+    
+    ```js
+    $(document).on('click', '.js-toggle__trigger', function(e) {
+      e.preventDefault()
+      var $obj = $(this)
+      var $text_data = $obj.data('text')
+      if ($text_data) {
+        $obj.data('text', $obj.text()).text($text_data)
+      }
+      $obj.closest('.js-toggle').toggleClass($obj.data('state') || 'is-active')
+    })
+    ```
+
+//- https://gist.github.com/tjbenton/7692539e5416a1a1fe14406a94e6cfbe
+section.u-hide.is-extraneous
+  ul(style='font-size: 1.5em;')
+    li target.com
+    li walmart.com
+    li amazon.com
+    li underarmour.com
+
+section.t-light.u-hide
+  :marked
+    ```html
+    <div class="c-card">
+      ...
+      <a href="c-btn c-btn--bubble u-icon--plus">Open overlay</a>
+      <div class="c-card__overlay">
+        ...
+      </div>
+      ...
+    </div>
+    ```
+    ```js
+    $('.c-card').on('click', '.c-btn--bubble', function(e) {
+      e.preventDefault();
+      $(this)
+        .parent()
+        .find('.c-card__overlay')
+        .addClass('is-open');
+    });
+    ```
+    
+section.u-hide
+  h1 3 months later...
+  p.fragment Another <code>.c-btn--bubble</code> gets added and you have to refactor

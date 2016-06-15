@@ -1,0 +1,44 @@
+section
+  :marked
+    ## `t-` Theme
+    
+    format: `.t-theme-name {}`
+    
+    It lets us know that UI Components' current cosmetic appearance may be due to the presence of a theme.
+    
+    ```bash
+    app/lib/styles/themes
+    ├── _secondary.styl
+    └── index.styl
+    ```
+    
+section.t-light
+  a(href="http://codepen.io/tjbenton21/pen/ezpjYe") codepen.io/tjbenton21/pen/ezpjYe
+  :marked
+    ```stylus
+    .t-secondary {
+      background #1abc9c
+      color white
+    }
+
+    .t-chick-fil-a {
+      background #b41933
+      color white
+    }
+    ```
+    
+  .fragment
+    :marked
+      ```stylus
+      // app/lib/styles/components/_buttons.styl
+      .c-btn {
+        ... // base button styles
+        background #1abc9c
+        color white
+
+        .t-secondary & {
+          background white
+          color #1abc9c
+        }
+      }
+      ```
