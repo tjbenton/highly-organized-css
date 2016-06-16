@@ -1859,7 +1859,7 @@ table .roll span:after {
   counter-reset: extraneous;
 }
 .reveal .slide-background.is-extraneous {
-  display: block !important;
+  display: block;
   counter-increment: extraneous;
 }
 .reveal .slide-background.is-extraneous:after,
