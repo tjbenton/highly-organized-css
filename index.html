@@ -53,7 +53,7 @@
         </section>
         <section><h3 id="css-specificity">CSS Specificity</h3>
 <ul>
-<li><code>important</code></li>
+<li><code>!important</code></li>
 <li>Inline <code>&lt;style&gt;</code> definitions</li>
 <li><code>#id</code></li>
 <li>attribute selector <code>[class*=&#39;awesome&#39;]</code></li>
@@ -213,7 +213,7 @@
 <li><a href="http://stylus-lang.com">Stylus</a></li>
 <li><a href="http://postcss.org">PostCSS</a></li>
 </ul>
-<p>For indepth info <a href="csspre.com/compare">csspre.com/compare</a></p>
+<p>For in-depth info <a href="csspre.com/compare">csspre.com/compare</a></p>
 
         </section>
         <section><h3 id="stylus">Stylus</h3>
@@ -408,8 +408,8 @@ html {
           </div>
         </section>
         <section><h2 id="-u-utilities"><code>u-</code> Utilities</h2>
-<p>format: .c-utility-name[<modifier>] { }</p>
-<p>A class with a single, specific, trustworthy role. That should not be bound onto or changed.</p>
+<p>format: <code>.c-utility-name[&lt;modifier&gt;] { }</code></p>
+<p>A class with a single, specific, trustworthy role.  It should not be bound onto or changed.</p>
 <pre><code class="lang-bash">app/lib/styles/utilities
 ├── _animations.styl
 ├── _clear.styl
