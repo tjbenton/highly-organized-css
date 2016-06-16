@@ -153,7 +153,6 @@
 
         </section>
         <section class="t-light is-extraneous"><h3 id="both-agree-not-to-do-this">Both agree not to do this</h3>
-<p>This is terribly verbose and also forces a DOM structure upon us; it is very inflexible</p>
 <pre><code class="lang-scss">.list
   .list__header
   .list__items
@@ -164,6 +163,11 @@
   .list__footer
 </code></pre>
 
+          <aside class="notes">
+            <ul> 
+              <li>This is terribly verbose and also forces a DOM structure upon us; it is very inflexible</li>
+            </ul>
+          </aside>
         </section>
         <section class="t-light is-extraneous"><h3 id="1-flattening-everything-to-be-on-the-same-level">1. Flattening everything to be on the same level</h3>
 <pre><code class="lang-scss">.list
@@ -323,10 +327,14 @@ html {
 </code></pre>
 
         </section>
-        <section>
+        <section style="font-size: 1.5em;">
           <h1>Namespacing</h1>
-          <p>Giving styles programmatic context.</p>
-          <p>Solves the problems of Context</p>
+          <h4>Solves the problems of Context</h4>
+          <aside class="notes">
+            <ul> 
+              <li>Giving styles programmatic context.</li>
+            </ul>
+          </aside>
         </section>
         <section><h2 id="-o-object"><code>o-</code> Object</h2>
 <p>format: <code>.o-object-name[&lt;element&gt;|&lt;modifier&gt;] { }</code></p>
