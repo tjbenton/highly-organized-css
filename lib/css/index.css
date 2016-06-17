@@ -2015,6 +2015,9 @@ table .roll span:after {
 .reveal [data-type=uikit].is-active {
   background: #9cc997;
 }
+.reveal .c-specificity .legend {
+  display: none;
+}
 .reveal .c-specificity .axis {
   opacity: 0.6;
 }

@@ -17,6 +17,7 @@
             <li class="twitter"><b>Twitter: </b><a href="https://twitter.com/tjbenton21" target="_blank">@tjbenton21</a></li>
             <li class="github"><b>Github: </b><a href="https://github.com/tjbenton" target="_blank">tjbenton21</a></li>
             <li><b>Examples: </b><a href="http://codepen.io/collection/XyJaVW" target="_blank">codepen.io/collection/XyJaVW</a></li>
+            <li style="display: none" class="js-ip"></li>
           </ul>
         </section>
         <section>
@@ -37,10 +38,10 @@
           <h1>Methodologies</h1>
           <!-- - https://speakerdeck.com/dafed/managing-css-projects-with-itcss-->
           <ul>
-            <li class="fragment"><a href="http://itcss.io">ITCSS</a><span class="fragment"> Inverted Triangle CSS</span></li>
-            <li class="fragment"><a href="https://smacss.com">SMACSS</a><span class="fragment"> Scalable and Modular Architecture for CSS</span></li>
-            <li class="fragment"><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax">BEM</a><span class="fragment"> Block Element Modifier</span></li>
-            <li class="fragment"><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">Namespacing</a><span class="fragment"> Transparent UI Code with Namespaces</span></li>
+            <li class="fragment"><a href="http://itcss.io">ITCSS</a> Inverted Triangle CSS</li>
+            <li class="fragment"><a href="https://smacss.com">SMACSS</a> Scalable and Modular Architecture for CSS</li>
+            <li class="fragment"><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax">BEM</a> Block Element Modifier</li>
+            <li class="fragment"><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">Namespacing</a> Transparent UI Code with Namespaces</li>
           </ul>
         </section>
         <section>
@@ -643,37 +644,6 @@ because they can lead to poor CSS if not used wisely.</p>
           </div>
         </section>
         <section>
-          <h1>Ordering your classes</h1>
-        </section>
-        <section>
-          <h1 style="font-size: 5em">Why?</h1>
-        </section>
-        <section data-background-image="lib/images/no-time.jpg" data-background-repeat="no-repeat" data-background-size="cover" data-background-position="center" data-background-transition="zoom"> <pre><code class="lang-html">&lt;div class=&#39;is-open js-bar _c-bar o-foo--bar c-bar--quux 
-            o-foo@lg u-bar u-quux@sm o-foo o-quux 
-            o-foo--bar@lg c-bar s-quux&#39;&gt;&lt;/div&gt;
-</code></pre>
-<br><br><br><br><br><br><br><br>
-        </section>
-        <section><code>s|t|(c|o|u)|((c|o|u)@(sm|md|lg|xl))|qa|js|is|has</code>
-          <ol>
-            <li class="fragment">scope</li>
-            <li class="fragment">theme</li>
-            <li class="fragment">
-              <ol class="u-parentheses">
-                <li>page, component, object, utility</li>
-                <li class="fragment">[page, component, object, utility]@<b>[sm, md, lg, xl]</b></li>
-              </ol>
-            </li>
-            <li class="fragment"><code>qa</code>, <code>js</code>, <code>is</code>, <code>has</code></li>
-          </ol>
-        </section>
-        <section data-background-image="lib/images/got-time.jpg" data-background-repeat="no-repeat" data-background-size="cover" data-background-position="center" data-background-transition="zoom"><br><br><br><br><br><pre><code class="lang-html">&lt;div class=&#39;s-quux c-bar _c-bar c-bar--quux o-foo o-foo--bar 
-            o-quux u-bar u-quux@sm o-foo@lg o-foo--bar@lg 
-            js-bar is-open&#39;&gt;&lt;/div&gt;
-</code></pre>
-
-        </section>
-        <section>
           <h2> <code>_- </code>Hack</h2>
           <p>Used for hotfixes and shouldn't live forever. </p>
           <p>A spin off of <a href="http://csswizardry.com/2013/04/shame-css" target="_blank">shame.css</a></p>
@@ -692,6 +662,37 @@ These classes will never make it to production code. </p>
 ├── _media.styl
 ├── _namespaces.styl
 └── index.styl
+</code></pre>
+
+        </section>
+        <section>
+          <h1>Ordering your classes</h1>
+        </section>
+        <section>
+          <h1 style="font-size: 5em">Why?</h1>
+        </section>
+        <section data-background-image="lib/images/no-time.jpg" data-background-repeat="no-repeat" data-background-size="contain" data-background-position="center" data-background-transition="zoom"> <pre><code class="lang-html">&lt;div class=&#39;is-open js-bar _c-bar o-foo--bar c-bar--quux 
+            o-foo@lg u-bar u-quux@sm o-foo o-quux 
+            o-foo--bar@lg c-bar s-quux&#39;&gt;&lt;/div&gt;
+</code></pre>
+<br><br><br><br><br><br><br><br>
+        </section>
+        <section><code>s|t|(c|o|u)|((c|o|u)@(sm|md|lg|xl))|qa|js|is|has</code>
+          <ol>
+            <li class="fragment">scope</li>
+            <li class="fragment">theme</li>
+            <li class="fragment">
+              <ol class="u-parentheses">
+                <li>page, component, object, utility</li>
+                <li class="fragment">[page, component, object, utility]@<b>[sm, md, lg, xl]</b></li>
+              </ol>
+            </li>
+            <li class="fragment"><code>qa</code>, <code>js</code>, <code>is</code>, <code>has</code></li>
+          </ol>
+        </section>
+        <section data-background-image="lib/images/got-time.jpg" data-background-repeat="no-repeat" data-background-size="contain" data-background-position="center" data-background-transition="zoom"><br><br><br><br><br><pre><code class="lang-html">&lt;div class=&#39;s-quux c-bar _c-bar c-bar--quux o-foo o-foo--bar 
+            o-quux u-bar u-quux@sm o-foo@lg o-foo--bar@lg 
+            js-bar is-open&#39;&gt;&lt;/div&gt;
 </code></pre>
 
         </section>
