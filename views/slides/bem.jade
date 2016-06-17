@@ -1,9 +1,9 @@
 section
   :marked
     # BEM
-    [en.bem.info/methodology](https://en.bem.info/methodology)
-    [getbem.com/introduction](http://getbem.com/introduction)
     ### Block | Element | Modifier
+    [en.bem.info/methodology](https://en.bem.info/methodology),
+    [getbem.com/introduction](http://getbem.com/introduction)
     
     Solves the problems of Specificity, Context, & Consistency
     
@@ -14,18 +14,23 @@ section
     ```
 
 section
-  :marked
-    ### What are BEM's Benefits?
-      - Avoids Nesting (single-level specificity)
-      - Clear picture of what CSS & HTML are doing
-      - No Guessing
-      - Clearly deliniates components
-      - Scales marvelously
+  h2 What are BEM's Benefits?
+  ul
+    li.fragment Avoids nesting (single-level specificity)
+    li.fragment Clear picture of what CSS & HTML are doing
+    li.fragment No guessing
+    li.fragment Clearly denotes components
+    li.fragment Scales marvelously
+    
 
 section
-  :marked
-    ### What are it's drawbacks
-      - Longer classes
+  h2 What are the drawbacks?
+  ul
+    li.fragment Longer classes
+    
+  aside.notes
+    ul
+      li If you have any questions about BEM come see me after
 
 section.is-extraneous
   :marked
@@ -34,7 +39,6 @@ section.is-extraneous
 section.t-light.is-extraneous
   :marked
     ### Both agree not to do this
-    This is terribly verbose and also forces a DOM structure upon us; it is very inflexible
     
     ```scss
     .list
@@ -46,6 +50,9 @@ section.t-light.is-extraneous
           .list__items__item__actions
       .list__footer
     ```
+  aside.notes
+    ul 
+      li This is terribly verbose and also forces a DOM structure upon us; it is very inflexible
     
 section.t-light.is-extraneous
   :marked
@@ -63,7 +70,7 @@ section.t-light.is-extraneous
     
 section.t-light.is-extraneous
   :marked
-    ### 2. Separate those elements
+    ### 2. Separate into different blocks
     ```scss
     .list
       .list__header
@@ -75,8 +82,7 @@ section.t-light.is-extraneous
     ```
     
 section.is-extraneous
-  :marked
-    A way to avoid this problem is to not Block your scope too high up.
+  h2 A way to avoid this problem is to not Block your scope too high up.
 
 section.t-light.is-extraneous
   :marked

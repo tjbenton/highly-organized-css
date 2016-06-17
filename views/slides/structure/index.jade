@@ -4,9 +4,9 @@ section
   p Solves the problem of difficulty locating styles
   
   ul
-    li Generic to explicit
-    li Low specificity to high specificity
-    li Far-reaching to localised
+    li.fragment Generic to explicit
+    li.fragment Low specificity to high specificity
+    li.fragment Far-reaching to localised
 
 section
   :marked
@@ -28,22 +28,24 @@ section
 include tools
 include base
 
-section
+section(style='font-size: 1.5em;')
   h1 Namespacing
-  p Giving styles programmatic context.
-  p Solves the problems of Context
+  h4 Solves the problems of Context
+  
+  aside.notes
+    ul 
+      li Giving styles programmatic context.
 
 include objects
 include components
 include utilities
-include pages
 include themes
 include scopes
 include states
 include javascript
 include conditional-viewports
-include order
 include hack
 include qa
 include dev
+include order
 include benefits

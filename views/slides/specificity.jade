@@ -2,7 +2,7 @@ section
   :marked
     ### CSS Specificity
     
-      - `important`
+      - `!important`
       - Inline `<style>` definitions
       - `#id`
       - attribute selector `[class*='awesome']`
@@ -61,11 +61,10 @@ section
       //-   }
       //- });
     })
-    
-    
 
-section.is-extraneous
-  :marked
-    - Give up `#id`s
-    - Stop nesting selectors so deeply
-    - Use a class based architecture
+section
+  h2 How to fix this
+  ul
+    li.fragment Give up <code>#id</code>s
+    li.fragment Stop nesting selectors
+    li.fragment Use a class based architecture

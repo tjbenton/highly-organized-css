@@ -2,19 +2,35 @@ section
   :marked
     ## Conditional Viewports
 
-    format: `.[class]@<breakpoint>{}`
+    format: `.[class]@<breakpoint> { }`
 
     Viewport suffixes help keep things consistent and our namespaces intact
 
 section.t-light
   :marked
-    ```css
-    .o-show { } /* all viewports */
-
-    @media (min-width: 768px) {
-      .o-show\@md { } /* only the medium size viewport and up */
+    ```stylus
+    .u-show {
+      display block !important /* all viewports */
+      
+      +media('>=md') {
+        &{$media} {
+          display block !important /* only the medium size viewport and up */
+        }
+      }
     }
     ```
-    ```html
-    <div class="u-hide u-show@md"> ... </div>
-    ```
+  
+  .fragment
+    :marked
+      ```css
+      .u-show { ... } /* all viewports */
+
+      @media (min-width: 768px) {
+        .u-show\@md { ... } /* only the medium size viewport and up */
+      }
+      ```
+  .fragment
+    :marked
+      ```html
+      <div class="u-hide u-show@md"> ... </div>
+      ```

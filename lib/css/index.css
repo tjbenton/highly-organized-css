@@ -1859,7 +1859,7 @@ table .roll span:after {
   counter-reset: extraneous;
 }
 .reveal .slide-background.is-extraneous {
-  display: block !important;
+  display: block;
   counter-increment: extraneous;
 }
 .reveal .slide-background.is-extraneous:after,
@@ -2014,6 +2014,9 @@ table .roll span:after {
 .reveal [data-type=uikit]:hover,
 .reveal [data-type=uikit].is-active {
   background: #9cc997;
+}
+.reveal .c-specificity .legend {
+  display: none;
 }
 .reveal .c-specificity .axis {
   opacity: 0.6;

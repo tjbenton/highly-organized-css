@@ -1,8 +1,30 @@
 section
-  :marked
-    # Ordering The Namespaces
+  h1 Ordering your classes
   
-  //- `<div class="is-open js-bar _c-bar o-foo--bar c-bar--quux o-foo@lg u-bar u-quux@sm o-foo o-quux o-foo--bar@lg c-bar s-quux"></div>`
+section
+  h1(style='font-size: 5em') Why?
+  
+section(
+  data-background-image='lib/images/no-time.jpg', 
+  data-background-repeat='no-repeat', 
+  data-background-size='contain', 
+  data-background-position='center', 
+  data-background-transition='zoom'
+)  
+  :marked
+    ```html
+    <div class='is-open js-bar _c-bar o-foo--bar c-bar--quux 
+                o-foo@lg u-bar u-quux@sm o-foo o-quux 
+                o-foo--bar@lg c-bar s-quux'></div>
+    ```
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
 
 section
   - var codelist = function(list) { return '<code>' + [].slice.call(arguments).join('</code>, <code>') + '</code>' }
@@ -17,3 +39,24 @@ section
         li.fragment [page, component, object, utility]@<b>[sm, md, lg, xl]</b>
     li.fragment!= codelist('qa', 'js', 'is', 'has')
 
+
+section(
+  data-background-image='lib/images/got-time.jpg', 
+  data-background-repeat='no-repeat', 
+  data-background-size='contain', 
+  data-background-position='center', 
+  data-background-transition='zoom'
+)
+  br
+  br
+  br
+  br
+  br
+  :marked
+    ```html
+    <div class='s-quux c-bar _c-bar c-bar--quux o-foo o-foo--bar 
+                o-quux u-bar u-quux@sm o-foo@lg o-foo--bar@lg 
+                js-bar is-open'></div>
+    ```
+      
+    
